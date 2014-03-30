@@ -12,7 +12,7 @@
 /db/*.sqlite3-journal
 
 # Ignore postgresql stats
-/vendor/postgresql/*pg_stat_tmp
+vendor/postgresql/pg_stat_tmp
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
