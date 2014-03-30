@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.banner{background-color: #73b9e6;
+$background-blue: #73b9e6;
+
+.banner{background-color: $background-blue;
         height: 100%;
+        padding-top: 40px;
 }
 
-
 #welcome {color: white;}
+
