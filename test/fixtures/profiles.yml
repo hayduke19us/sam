@@ -1,0 +1,13 @@
+#Profiles
+
+franny_profile:
+  religion: "christian"
+  latitude: 1.1
+  longitude: 1.2
+  user: franny
+
+zoey_profile:
+  religion: "muslim"
+  latitude: 1.1
+  longitude: 1.2
+  user: zoey
