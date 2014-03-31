@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem "devise"
-
+gem "geocoder"
 gem "foundation-rails"
 
 group :development do
