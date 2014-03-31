@@ -3,11 +3,36 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $background-blue: #73b9e6;
+$question: #efefef;
 
-.banner{background-color: $background-blue;
-        height: 100%;
-        padding-top: 40px;
+.left {float: left;}
+.marg-top {margin-top: 30px;}
+.white {color: white;
 }
 
+.banner {background-color: $background-blue;
+         padding-top: 40px;
+         height: 100%;
+}
+
+
 #welcome {color: white;}
+
+#sign-in {margin-top: 20px;}
+
+.display-box {background-color: white;
+              margin-right: 10px;
+              text-align: center;
+              padding: 30px;
+}
+.display-box:hover {-webkit-transform: scale(1.1,1.1);
+}
+#question {color: darken($background-blue, 40);
+
+}
+#answer {color: darken($background-blue, 20);
+         padding-left: 10px;
+} 
+
+#globe {opacity: 0.7;}
 
