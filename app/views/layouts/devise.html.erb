@@ -12,8 +12,13 @@
   </head>
 
   <body>
-
-    <%= yield %>
+    <div class="banner">
+      <div class="row">
+        <div class="small-4 large-4">
+        <%= yield %>
+        </div>
+      </div>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
