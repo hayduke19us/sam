@@ -1,8 +1,20 @@
-<% unless user_signed_in? %>
-  <%=link_to new_session_path, class: "button"%>
-<% end %>
+<div class="banner">
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <% unless user_signed_in? %>
+        <%=link_to new_session_path, class: "button"%>
+      <% end %>
 
-<% unless current_user.profile%>
-  hello
-
-<%end%>
+      <% unless current_user.profile%>
+        <%= link_to "Create Profile", "#", id: "new_profile", class: "button"%>
+      <%end%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-12">
+      <div class="hide" id="profileBox">
+        hello
+      </div>
+    </div>
+  </div>
+</div>

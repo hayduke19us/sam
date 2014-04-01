@@ -1,3 +1,6 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+#on click profile form shows
+  $("#new_profile").click( ->
+    $("#profileBox").toggle()
+    $(".banner").css("opacity", "0.3")
+    false
+    )
