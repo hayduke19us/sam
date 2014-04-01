@@ -1,2 +1,8 @@
-<h1>Users#dashboard</h1>
-<p>Find me in app/views/users/dashboard.html.erb</p>
+<% unless user_signed_in? %>
+  <%=link_to new_session_path, class: "button"%>
+<% end %>
+
+<% unless current_user.profile%>
+  hello
+
+<%end%>
