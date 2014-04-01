@@ -1,4 +1,7 @@
 Sam::Application.routes.draw do
+  get "users/dashboard"
+  get "users/create_profile"
+  get "users/update_profile"
   get "profiles/new"
   get "profiles/create"
   get "profiles/destroy"
