@@ -24,4 +24,8 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "christian", @franny.religion
   end
 
+  test "if the ENV is Development then we have a spoofed ip" do
+    assert_equal 1, @franny.ip
+  end
+
 end
