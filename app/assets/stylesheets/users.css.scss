@@ -1,3 +1,25 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$background-blue: #73b9e6;
+
+#modal {background-color: darken($background-blue, 10);
+        z-index: 1000;
+        padding: 20px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        opacity: 0.7;
+}
+
+#profileBox {background-color: #efefef;
+             padding: 30px;
+             width: 33%;
+             margin-left: 33%;
+             border-radius: 5px;
+             margin-top: 50px;
+
+}
