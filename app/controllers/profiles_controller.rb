@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
 
   def create
-    profile = Profile.new(ip_address: request.remote_ip,
+    profile = Profile.new(ip_address: current_user.current_signed_in_ip,
                           religion: params[:religion],
                           user_id: current_user.id)
     if profile.save
