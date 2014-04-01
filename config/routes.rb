@@ -2,10 +2,8 @@ Sam::Application.routes.draw do
   get "users/dashboard"
   get "users/create_profile"
   get "users/update_profile"
-  get "profiles/new"
-  get "profiles/create"
-  get "profiles/destroy"
   get "welcome/index"
+  resources :profiles
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
