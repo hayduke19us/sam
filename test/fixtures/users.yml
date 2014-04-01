@@ -3,7 +3,11 @@
 franny:
   email: franny@gmail.com
   encrypted_password: 123franny
+  lat: 1.1
+  long: 1.2
 
 zoey:
   email: zoey@gmail.com
   encrypted_password: 123zoey
+  lat: 1.1
+  long: 1.2

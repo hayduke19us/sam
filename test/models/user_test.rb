@@ -24,11 +24,4 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "christian", @franny.religion
   end
 
-  test "a users lat is directly accessible" do
-    assert_equal 1.1, @franny.latitude
-  end
-
-  test "a users long is directly accessible" do
-    assert_equal 1.2, @franny.longitude
-  end
 end

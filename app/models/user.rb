@@ -17,12 +17,4 @@ class User < ActiveRecord::Base
     self.profile.religion
   end
 
-  def latitude
-    self.profile.latitude
-  end
-
-  def longitude
-    self.profile.longitude
-  end
-
 end
