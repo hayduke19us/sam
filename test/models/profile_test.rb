@@ -7,12 +7,7 @@ class ProfileTest < ActiveSupport::TestCase
   end
 
   test "a profile without latitude is invalid" do
-    @franny_profile.latitude = nil
-    refute @franny_profile.valid?
-  end
-
-  test "a profile without longitude is invalid" do
-    @franny_profile.longitude = nil
+    @franny_profile.ip_address = nil
     refute @franny_profile.valid?
   end
 

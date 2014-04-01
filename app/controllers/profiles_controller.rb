@@ -1,6 +1,4 @@
 class ProfilesController < ApplicationController
-  def new
-  end
 
   def create
     profile = Profile.new(ip_address: request.remote_ip,
@@ -11,6 +9,4 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def destroy
-  end
 end

@@ -1,5 +1,7 @@
 #on click profile form shows
-  $("#new_profile").click( ->
-    $("#modal").toggle()
-    false
-    )
+$("#close_modal").click( ->
+  $("#modal").toggle()
+  false
+  )
+
+
