@@ -2,13 +2,9 @@ class Profile < ActiveRecord::Base
 
   belongs_to :user
 
-  validates_presence_of :latitude, :longitude
+  validates_presence_of :ip_address
 
   geocoded_by :ip_address
   after_validation :geocode
-
-  def ip_address ip
-    ip
-  end
 
 end
