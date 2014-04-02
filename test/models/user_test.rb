@@ -11,7 +11,7 @@ class UserTest < ActiveSupport::TestCase
     refute @franny.valid?
   end
 
-  test "a user without a encrypted_password is invalid" do
+  test "a user without an encrypted_password is invalid" do
     @franny.encrypted_password = nil
     refute @franny.valid?
   end
