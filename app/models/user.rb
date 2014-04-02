@@ -17,8 +17,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  after_validation :geocode, :reverse_geocode,
-    if: lambda { |obj| obj.current_sign_in_ip_changed?}
+  after_validation :geocode, :reverse_geocode
 
   def ip_address
     if Rails.env == "development" || Rails.env == "test"
@@ -27,7 +26,6 @@ class User < ActiveRecord::Base
       self.current_sign_in_ip
     end
   end
-
 
   def religion
     self.profile.religion
