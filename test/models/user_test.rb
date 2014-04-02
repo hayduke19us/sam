@@ -25,7 +25,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "if the ENV is Development then we have a spoofed ip" do
-    assert_equal 1, @franny.ip
+    assert_equal "50.78.167.161", @franny.ip_address
   end
 
 end
