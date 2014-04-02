@@ -10,7 +10,15 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :encrypted_password
 
   geocoded_by :ip_address, latitude: :lat, longitude: :long
-  after_validation :geocode
+
+  reverse_geocoded_by :lat, :long do |obj, results|
+    if geo = results.first
+      obj.city = geo.city
+    end
+  end
+
+  after_validation :geocode, :reverse_geocode,
+    if: lambda { |obj| obj.current_sign_in_ip_changed?}
 
   def ip_address
     if Rails.env == "development" || Rails.env == "test"

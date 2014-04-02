@@ -34,4 +34,8 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "if users ip changes then their lat and long changes" do
+    skip
+  end
+
 end
