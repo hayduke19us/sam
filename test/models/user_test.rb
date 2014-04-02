@@ -24,8 +24,14 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "christian", @franny.religion
   end
 
-  test "if the ENV is Development then we have a spoofed ip" do
+  test "if the ENV is development or test then we have a spoofed ip" do
     assert_equal "50.78.167.161", @franny.ip_address
+  end
+
+  test "if ENV is production it will return the current_sign_in_ip" do
+    Rails.stub(:env, "production") do
+      assert_equal "127.0.0.1", @franny.ip_address
+    end
   end
 
 end

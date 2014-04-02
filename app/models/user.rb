@@ -13,10 +13,10 @@ class User < ActiveRecord::Base
   after_validation :geocode
 
   def ip_address
-    if Rails.env.development? || Rails.env.test?
-      return "50.78.167.161"
-    else
-      :current_sign_in_ip
+    if Rails.env == "development" || Rails.env == "test"
+      "50.78.167.161"
+    elsif Rails.env == "production"
+      self.current_sign_in_ip
     end
   end
 
