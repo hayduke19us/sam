@@ -13,6 +13,11 @@ class WelcomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should returns a questions variable for welcome#index" do
+    get :index
+    refute_nil assigns(:questions)
+  end
+
   test "should redirect_to users/dashboard" do
     sign_in :user, @user
     get :index
