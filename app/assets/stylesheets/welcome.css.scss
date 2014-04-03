@@ -5,7 +5,7 @@
 $background-blue: #73b9e6;
 $question: #efefef;
 
-$img-shadow: 0px 0px 5px 2px darken($background-blue, 10);
+$img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
 @mixin box-shadow($shadow){
   -mox-box-shadow: $shadow;
   -webkit-box-shadow: $shadow;
@@ -25,7 +25,7 @@ $img-shadow: 0px 0px 5px 2px darken($background-blue, 10);
 
 .dark-banner {background-color: darken($background-blue, 10);
               height: 100%;
-              margin-top: -25em;
+              margin-top: -30em;
 }
 
 
@@ -44,8 +44,9 @@ $img-shadow: 0px 0px 5px 2px darken($background-blue, 10);
 .display-box:hover {-webkit-transform: scale(1.1,1.1);
 }
 
-#symposium {margin: 30px 30px 0px 0px;}
+#symposium {margin: 30px 30px 60px 0px;}
 #question {color: darken($background-blue, 40);
+           font-size: 20px;
          }
 
 #answer {color: darken($background-blue, 30);
@@ -53,15 +54,20 @@ $img-shadow: 0px 0px 5px 2px darken($background-blue, 10);
 } 
 
 #answer_2 {color: darken($background-blue, 20);
-        padding: 0px 0px 0px 20px;
+        padding: 10px;
+}
+
+#location {font-size: 12px;
+           padding-left: 15px;
+}
+
+#location_2 {font-size: 12px;
+             padding-left: 15px;
 }
 
 #globe {opacity: 0.7;}
 
-#img-mock {width: 200px;
-           margin-right: 20px; 
-           height: 200px;
-           @include box-shadow($img-shadow);
+#img-mock { margin-right: 20px; 
            margin-top: 20px;
 }
 
