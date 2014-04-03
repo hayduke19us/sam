@@ -13,19 +13,17 @@
   </head>
 
   <body>
-    <div class="banner">
-      <% if current_user %>
-        <%= link_to "log out",
-          destroy_user_session_path,
-          method: "delete",
-          class: "button right" %>
-        <% if current_user.profile %>
-          <%= link_to "Profile", edit_profile_path(current_user.profile), 
-            class: "button right"%>
-        <% end %>
+    <% if current_user %>
+      <%= link_to "log out",
+        destroy_user_session_path,
+        method: "delete",
+        class: "button right" %>
+      <% if current_user.profile %>
+        <%= link_to "Profile", edit_profile_path(current_user.profile), 
+          class: "button right"%>
       <% end %>
+    <% end %>
 
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>

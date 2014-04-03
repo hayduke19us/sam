@@ -1,53 +1,79 @@
-<div class="row">
-  <div class="small-12 large-12 columns">
-    <h1 id="welcome">Pals</h1>
-    <h2>A safe place to learn about others</h2>
-  </div>
-</div>
-<div class="row">
-  <div class="small-12 large-12 columns">
-    <div id="sign-in">
-      <%= link_to "login", new_user_session_path, class: "button"%>
-      <%= link_to "Sign up", new_user_registration_path, class: "button"%>
+<div class="banner">
+  <%= link_to "For Parents", "#Parents", class: "button", id: "parents-link"%>
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <h1 id="welcome">Pals</h1>
+      <h2>A safe place to learn about others</h2>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="small-6 medium-6 large-3 columns">
-    <%= image_tag "http://linnaedesigns.com/files/seo-galleries/gallery-156/thumbs/indian-child-200x200.jpg", id: "img-mock"%>
-
-    <%= image_tag "http://i2.wp.com/www.chengduliving.com/wp-content/uploads/2013/03/inky-thumb.jpg?resize=200%2C200", id: "img-mock"%>
-
-    <%= image_tag "http://1.gravatar.com/blavatar/1806dba5487b8978afff3da83c12cf66?s=200", id: "img-mock"%>
-
-    <%= image_tag "http://2.bp.blogspot.com/-5rq1gJ-oY5k/TWGfLNf-mhI/AAAAAAAAAKQ/pmJkSxhOjx0/s200/smile", id: "img-mock"%>
-  </div>
-
-  <div class="small-6 medium-12 large-3 columns">
-    <% @questions.each do |question, answer|%>
-      <div id="symposium">
-        <div id="question">
-          <%= question %>
-        </div>
-        <% answer.each do |answer, location|%>
-          <div class="hide-for-small" id="answer">
-            <%= answer %>
-          </div>
-          <div class="hide-for-small "id="location">
-            <%= location %>
-          </div>
-        <% end %>
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <div id="sign-in">
+        <%= link_to "login", new_user_session_path, class: "button"%>
+        <%= link_to "Sign up", new_user_registration_path, class: "button"%>
       </div>
-    <% end %>
+    </div>
   </div>
+  <div class="row">
+    <div class="small-6 medium-6 large-3 columns">
+      <%= image_tag "http://linnaedesigns.com/files/seo-galleries/gallery-156/thumbs/indian-child-200x200.jpg", id: "img-mock"%>
 
-  <div class="hide-for-small medium-6 large-6 columns">
-    <div id="globe">
-      <%= image_tag "http://i.imgur.com/YMKd3Gi.png?" %>
+      <%= image_tag "http://i2.wp.com/www.chengduliving.com/wp-content/uploads/2013/03/inky-thumb.jpg?resize=200%2C200", id: "img-mock"%>
+
+      <%= image_tag "http://1.gravatar.com/blavatar/1806dba5487b8978afff3da83c12cf66?s=200", id: "img-mock"%>
+
+      <%= image_tag "http://2.bp.blogspot.com/-5rq1gJ-oY5k/TWGfLNf-mhI/AAAAAAAAAKQ/pmJkSxhOjx0/s200/smile", id: "img-mock"%>
+    </div>
+    <div class="small-6 medium-12 large-3 columns">
+      <% @questions.each do |question, answer|%>
+        <div id="symposium">
+          <div id="question">
+            <%= question %>
+          </div>
+          <% answer.each do |answer, location|%>
+            <div class="hide-for-small" id="answer">
+              <%= answer %>
+            </div>
+            <div class="hide-for-small "id="location">
+              <%= location %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="hide-for-small medium-6 large-6 columns">
+      <div id="globe">
+        <%= image_tag "http://i.imgur.com/YMKd3Gi.png?" %>
+      </div>
     </div>
   </div>
 </div>
 <div class="dark-banner">
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <div id="Parents">
+        <h2 id="safe">How we keep your kids safe</h2>
+        <h4>The Guardian</h4>
+        <h4>The Guardian is you!
+          Nothing happens without your consent on this site. When ever your kid 
+          gets a message you get an email. It's your decision whether or not
+          he or she is able to receive and interact with the sender.
+        </h4>
+        <h4>We keep a log of all of the conversations, with location references.
+        And we want to advertise that so all creeps know that we are watching.</h4>
+      <h4>The "For Parents" link will always be in the top left corner. 
+        When ever your kid is logged in this link will take you to a nice an 
+        readable log of your kid's activities. 
+      </h4>
+      <h4>We have built a nice algorithm to keep your kid from
+        receiving answers or questions with bad language in it.
+      </h4>
+      <h4>
+      </h4>
+      </div>
+    </div>
+  </div>
 </div>
 
 

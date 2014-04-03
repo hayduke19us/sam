@@ -19,13 +19,11 @@ $img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
 .inline {display: inline;}
 
 .banner {background-color: $background-blue;
-         padding-top: 40px;
-         height: 100%;
+         height: auto;
 }
 
 .dark-banner {background-color: darken($background-blue, 10);
               height: 100%;
-              margin-top: -30em;
 }
 
 
@@ -65,9 +63,19 @@ $img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
              padding-left: 15px;
 }
 
-#globe {opacity: 0.7;}
+#globe {opacity: 0.7;
+        position: fixed;
+}
 
 #img-mock { margin-right: 20px; 
            margin-top: 20px;
+}
+
+#parents-link {float: left;}
+
+#Parents {padding-top: 30px;}
+
+#safe {color: white;
+       font-family: "Lobster";
 }
 
