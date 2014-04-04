@@ -40,6 +40,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    childprocess (0.5.2)
+      ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -57,6 +59,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    ffi (1.9.3)
     foundation-rails (5.2.1.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -115,6 +118,7 @@ GEM
     rake (10.2.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    rubyzip (1.1.2)
     sass (3.2.18)
     sass-rails (4.0.2)
       railties (>= 4.0.0, < 5.0)
@@ -124,6 +128,11 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    selenium-webdriver (2.41.0)
+      childprocess (>= 0.5.0)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0.4)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -148,6 +157,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket (1.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -169,5 +179,6 @@ DEPENDENCIES
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
   sdoc
+  selenium-webdriver
   turbolinks
   uglifier (>= 1.3.0)

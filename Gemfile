@@ -8,6 +8,7 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "minitest-rails"
+  gem "selenium-webdriver"
 end
 
 group :test do
