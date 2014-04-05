@@ -9,30 +9,34 @@ $ ->
       $("#globe").fadeIn("slow")
    )
 
-  $("#guardian-title").click( ->
+  class safe
+    constructor: (id) -> (
+      x = $(id).html()
+      $("#safe-description").html(x)
+      $("#safe-description").fadeIn()
+    )
+
+  $("#guard-bt").click( ->
     complete = -> (
-      $("#guard-info").fadeIn("slow")
-     )
-    $("#scribe-info").fadeOut( complete ) if $("#scribe-info")
-    $("#grandma-info").fadeOut( complete ) if $("#grandma-info")
+      safe "#guard-info"
+    )
+    $("#safe-description").fadeOut( complete )
     false
-   )
+  )
 
   $("#scribe-bt").click( ->
     complete = -> (
-      $("#scribe-info").fadeIn("slow")
+      safe "#scribe-info"
     )
-    $("#guard-info").fadeOut( complete ) if $("#guard-info")
-    $("#grandma-info").fadeOut( complete ) if $("#grandma-info")
+    $("#safe-description").fadeOut( complete )
     false
    )
 
   $("#grandma-bt").click( ->
     complete = -> (
-      $("#grandma-info").fadeIn("slow")
+      safe "#grandma-info"
     )
-    $("#guard-info").fadeOut()
-    $("#scribe-info").fadeOut( complete )
+    $("#safe-description").fadeOut( complete )
     false
    )
 
