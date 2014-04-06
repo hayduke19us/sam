@@ -19,7 +19,7 @@ $ ->
       else
         $( div ).finish()
         $( div ).animate({opacity: 1.0})
-        do option if option not null
+        do option if option
     )
 
   globeFadeIn = ->
