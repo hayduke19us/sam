@@ -11,7 +11,7 @@ class UserTest < ActiveSupport::TestCase
     refute @franny.valid?
   end
 
-  test "a user without a encrypted_password is invalid" do
+  test "a user without an encrypted_password is invalid" do
     @franny.encrypted_password = nil
     refute @franny.valid?
   end
@@ -24,11 +24,18 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "christian", @franny.religion
   end
 
-  test "a users lat is directly accessible" do
-    assert_equal 1.1, @franny.latitude
+  test "if the ENV is development or test then we have a spoofed ip" do
+    assert_equal "50.78.167.161", @franny.ip_address
   end
 
-  test "a users long is directly accessible" do
-    assert_equal 1.2, @franny.longitude
+  test "if ENV is production it will return the current_sign_in_ip" do
+    Rails.stub(:env, "production") do
+      assert_equal "127.0.0.1", @franny.ip_address
+    end
   end
+
+  test "if users ip changes then their lat and long changes" do
+    skip
+  end
+
 end
