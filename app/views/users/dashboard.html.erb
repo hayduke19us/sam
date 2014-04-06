@@ -8,12 +8,14 @@
   </div>
 
   <% unless current_user.profile%>
+    <div id="modal-back">
+    </div>
     <div class="show" id="modal">
       <div id="profileBox">
         <%= render partial: "/profiles/form" %>
-        <%= link_to "I'll do this Later", 
-          "#", 
-          id: "close_modal", 
+        <%= link_to "I'll do this Later",
+          "#",
+          id: "close_modal",
           class: "button tiny secondary"%>
       </div>
     </div>

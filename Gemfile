@@ -13,6 +13,7 @@ end
 
 group :test do
   gem "minitest-rails-capybara"
+  gem "hirb"
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
