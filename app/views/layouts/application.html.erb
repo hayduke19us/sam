@@ -18,6 +18,7 @@
         destroy_user_session_path,
         method: "delete",
         class: "button right" %>
+
       <% if current_user.profile %>
         <%= link_to "Profile", edit_profile_path(current_user.profile), 
           class: "button right"%>

@@ -1,19 +1,12 @@
 <div class="extended-banner">
-  <div class="row">
-    <div class="small-12 large-12 columns">
-      <% unless user_signed_in? %>
-        <%=link_to new_session_path, class: "button"%>
-      <% end %>
-    </div>
-  </div>
-
+  <%= link_to "For Parents", "#", class: "button"%>
   <% unless current_user.profile%>
     <div id="modal-back">
     </div>
     <div class="show" id="modal">
       <div id = "globe-wrapper">
         <div class="row">
-          <div class="hide-for-small medium-12 
+          <div class="small-12 mall-centered medium-12 
             medium-centered large-8 large-centered columns">
               <%= image_tag "http://www3.weforum.org/tools/gac/youth-unemployment-visualization-2013/assets/images/1_intro/globe.png", id: "modal-globe" %>
           </div>
@@ -29,12 +22,13 @@
               id: "close_modal",
               class: "button tiny secondary"%>
           </div>
+        </div>
       </div>
     </div>
   <%end%>
   <div class="row">
-    <div class="small-12 large-6">
-      <!--partial with form for question--!>
+    <div class="small-12 large-12 columns">
+      <h1 class="lobster dark-blue">Dashboard</h1>
     </div>
   </div>
 </div>
