@@ -2,7 +2,7 @@
   <div id="globe" >
     <%= image_tag "http://www3.weforum.org/tools/gac/youth-unemployment-visualization-2013/assets/images/1_intro/globe.png" %>
   </div>
-  <%= link_to "For Parents", "#", class: "button small", id: "parents-link"%>
+  <%= link_to "For Parents", "#", class: "button", id: "parents-link"%>
   <div class="row">
     <div class="small-12 large-12 columns">
       <h1 id="welcome">Pen-Pals</h1>
@@ -12,13 +12,13 @@
   <div class="row">
     <div class="small-12 large-12 columns">
       <div id="sign-in">
-        <%= link_to "login", new_user_session_path, class: "button"%>
+        <%= link_to "Log in", new_user_session_path, class: "button"%>
         <%= link_to "Sign up", new_user_registration_path, class: "button"%>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="small-6 medium-6 large-3 columns">
+    <div class="small-6 medium-3 large-3 columns">
       <%= image_tag "http://linnaedesigns.com/files/seo-galleries/gallery-156/thumbs/indian-child-200x200.jpg", id: "img-mock"%>
 
       <%= image_tag "http://i2.wp.com/www.chengduliving.com/wp-content/uploads/2013/03/inky-thumb.jpg?resize=200%2C200", id: "img-mock"%>
@@ -27,7 +27,7 @@
 
       <%= image_tag "http://2.bp.blogspot.com/-5rq1gJ-oY5k/TWGfLNf-mhI/AAAAAAAAAKQ/pmJkSxhOjx0/s200/smile", id: "img-mock"%>
     </div>
-    <div class="small-6 medium-12 large-3 columns">
+    <div class="small-6 medium-9 large-9 columns">
       <% @questions.each do |question, answer|%>
         <div id="symposium">
           <div id="question">
@@ -44,13 +44,11 @@
         </div>
       <% end %>
     </div>
-    <div class="hide-for-small medium-6 large-6 columns">
-    </div>
   </div>
 </div>
 <div class="dark-banner">
   <div class="row">
-    <div class="small-6 large-12 columns">
+    <div class="small-6 medium-12 large-12 columns">
       <div id="Parents">
         <h2 id="safe">How we keep your kids safe</h2>
         <%= link_to "The Guardian", "#", class: "button", id: "guard" %>
@@ -65,7 +63,7 @@
         <h4 class="dark-blue">We know how important it is that
           your kid's experience with pen-pal is a safe one. That's
           why we've come up with three protectors. To find out more
-          click the buttons above. 
+          click the buttons above.
       </div>
       <div class="hide" id= "guard-info">
         <h4 class="dark-blue">No Interaction occurs
@@ -90,7 +88,7 @@
           words to be used in an interaction. Guardians also have the ability
           to block interactions.</h4>
       </div>
-      <div "hide-for-small large-6 columns">
+      <div class="hide-for-small medium-6 large-12 columns">
         <%= image_tag "http://i.imgur.com/2NalxTh.png" %>
       </div>
     </div>
@@ -116,17 +114,12 @@
 </div>
 <div class="footer">
    <div class="row">
-     <div class="small-6 large-6 columns">
-       <%= link_to "login", new_user_session_path, class: "button success"%>
+     <div class="small-12 large-8 columns">
+       <%= link_to "Log in", new_user_session_path, class: "button success"%>
        <%= link_to "Sign up", new_user_registration_path, class: "button success"%>
-     </div>
-     <div>
-     <div class="small-6 large-push-3 columns">
        <div id="copyright">
          copyright 2014 Matthew Sullivan
        </div>
-     </div>
+      </div>
    </div>
 </div>
-
-
