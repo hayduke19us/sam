@@ -1,8 +1,11 @@
 <div class="banner">
-  <%= link_to "For Parents", "#Parents", class: "button", id: "parents-link"%>
+  <div id="globe" >
+    <%= image_tag "http://www3.weforum.org/tools/gac/youth-unemployment-visualization-2013/assets/images/1_intro/globe.png" %>
+  </div>
+  <%= link_to "For Parents", "#", class: "button small", id: "parents-link"%>
   <div class="row">
     <div class="small-12 large-12 columns">
-      <h1 id="welcome">Pals</h1>
+      <h1 id="welcome">Pen-Pals</h1>
       <h2>A safe place to learn about others</h2>
     </div>
   </div>
@@ -41,11 +44,7 @@
         </div>
       <% end %>
     </div>
-
     <div class="hide-for-small medium-6 large-6 columns">
-      <div id="globe">
-        <%= image_tag "http://i.imgur.com/YMKd3Gi.png?" %>
-      </div>
     </div>
   </div>
 </div>
@@ -54,9 +53,9 @@
     <div class="small-6 large-12 columns">
       <div id="Parents">
         <h2 id="safe">How we keep your kids safe</h2>
-        <%= link_to "The Guardian", "#", class: "button", id: "guard-bt" %>
-        <%= link_to "The Scribe", "#", class: "button", id: "scribe-bt" %>
-        <%= link_to "The Grandma", "#", class: "button", id: "grandma-bt" %>
+        <%= link_to "The Guardian", "#", class: "button", id: "guard" %>
+        <%= link_to "The Scribe", "#", class: "button", id: "scribe" %>
+        <%= link_to "The Grandma", "#", class: "button", id: "grandma" %>
       </div>
     </div>
   </div>
