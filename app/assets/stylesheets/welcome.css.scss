@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $background-blue: #73b9e6;
-$question: #efefef;
+$question: white;
 
 $img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
 @mixin box-shadow($shadow){
@@ -16,6 +16,7 @@ $img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
 .marg-top {margin-top: 30px;}
 .white {color: white;
 }
+.dark-blue {color: darken($background-blue, 40);}
 .inline {display: inline;}
 
 .banner {background-color: $background-blue;
@@ -24,6 +25,17 @@ $img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
 
 .dark-banner {background-color: darken($background-blue, 10);
               height: 100%;
+}
+
+.night-banner { background-color: darken($background-blue, 20);
+                height: 100%;
+}
+
+blue-dot {padding: 3px;
+         background-color: darken($background-blue, 30);
+         display: inline-block;
+         border-radius: 4px;
+         margin: 0px 3px 3px 0px;
 }
 
 
@@ -43,7 +55,7 @@ $img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
 }
 
 #symposium {margin: 30px 30px 60px 0px;}
-#question {color: darken($background-blue, 40);
+#question {color: white;
            font-size: 20px;
          }
 
@@ -63,7 +75,7 @@ $img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
              padding-left: 15px;
 }
 
-#globe {opacity: 0.7;
+#globe {opacity: 0.2;
         position: fixed;
 }
 
@@ -78,4 +90,3 @@ $img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
 #safe {color: white;
        font-family: "Lobster";
 }
-

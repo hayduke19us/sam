@@ -9,6 +9,11 @@ group :development do
   gem "binding_of_caller"
   gem "minitest-rails"
   gem "hirb"
+  gem "selenium-webdriver"
+end
+
+group :test do
+  gem "minitest-rails-capybara"
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
