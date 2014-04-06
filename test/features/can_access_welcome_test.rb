@@ -7,7 +7,7 @@ class CanAccessWelcomeTest < Capybara::Rails::TestCase
   end
 
   test "first scope of view is wrapped with div.banner" do
-    assert within("div.banner") { page.has_content?('Pals') }
+    assert within("div.banner") { page.has_content?('Pen-Pals') }
   end
 
   test "welcome parents-link is present" do
@@ -18,8 +18,8 @@ class CanAccessWelcomeTest < Capybara::Rails::TestCase
     assert find('#sign-in').visible?
   end
 
-  test "five images are present" do
-    assert_equal 5, page.all("img").count
+  test "6 images are present" do
+    assert_equal 6, page.all("img").count
   end
 
   test "4 questions are present within symposiums" do
@@ -49,8 +49,8 @@ class MobileVersion < Capybara::Rails::TestCase
     visit root_path
   end
 
-  test "4 images should be present...(globe is hidden)" do
-    assert_equal 4, page.all("img").count
+  test "6 images should be present" do
+    assert_equal 6, page.all("img").count
   end
 
   test "questions are still visible" do
