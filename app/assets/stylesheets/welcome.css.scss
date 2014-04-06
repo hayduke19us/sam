@@ -33,6 +33,7 @@ $img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
 
 .footer { background-color: darken($background-blue, 30);
           height: 20%;
+          padding-top: 2%;
 }
 
 blue-dot {padding: 3px;
@@ -99,4 +100,5 @@ blue-dot {padding: 3px;
                 color: white;
                 padding-top: 30px;
 }
-#copyright {padding-top: 3%;}
+
+#copyright {color: darken($background-blue, 40);}
