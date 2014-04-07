@@ -1,9 +1,19 @@
 $ ->
-  $( document ).on('click', "#close-modal", ->
-    $("#modal").fadeOut()
-    $("#modal-back").fadeOut()
-    false
-  )
+  closeModal = (link, modal, option=null) ->
+    $( document ).on('click', link, ->
+      $(modal).fadeOut()
+      $(option).fadeOut() if option
+      false
+    )
+  openModal = (link, modal, option=null) ->
+    $( document ).on('click', link, ->
+      $(modal).fadeIn()
+      $(option).fadeIn() if option
+      false
+    )
+
+  closeModal "#close-modal", "#modal", "#modal-back"
+  openModal "#new-profile", "#modal", "#modal-back"
 
   $( document ).on('click', "#correct-city", ->
     $("#city").toggle()
