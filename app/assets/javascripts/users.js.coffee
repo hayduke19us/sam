@@ -10,4 +10,16 @@ $ ->
     false
   )
 
+  showLogin = (link, div1, div2) ->
+    $( document ).on('click', link,  ->
+      complete = ->
+        $(div1).fadeIn()
+        false
+      $(div2).fadeOut( complete )
+      false
+    )
+
+  showLogin "#guard-login", "#login", "#guardian"
+  showLogin "#guard-show", "#guardian", "#login"
+
 
