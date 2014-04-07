@@ -31,7 +31,7 @@ $ ->
 
 
 
-  $("#parents-link").click( ->
+  $( document ).on("click", "#parents-link",  ->
     $( window ).scrollTop( $( "div.banner").height() ) 
     false
   )

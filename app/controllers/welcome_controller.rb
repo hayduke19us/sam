@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
     if user_signed_in?
       redirect_to users_dashboard_path
     end
-    @questions = {"What's your favorite food?" =>
+    @questions = {"What's you're favorite food?" =>
                   {"I like to eat Butter Chicken with Baryani."=>
                     "Banglore, india",
                     "White cheese pizza from Cibeli's of course."=>
