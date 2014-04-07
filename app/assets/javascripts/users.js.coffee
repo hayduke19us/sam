@@ -19,7 +19,5 @@ $ ->
       false
     )
 
-  showLogin "#guard-login", "#login", "#guardian"
-  showLogin "#guard-show", "#guardian", "#login"
 
 

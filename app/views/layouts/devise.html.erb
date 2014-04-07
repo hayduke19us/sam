@@ -14,9 +14,20 @@
 
   <body>
     <div class="extended-banner">
-      <div class="row">
-        <div class="small-4 large-4">
-        <%= yield %>
+      <div id="globe-wrapper">
+        <div class="row">
+          <div class="hide-for-small medium-12 medium-centered 
+            large-12 large-centered columns">
+            <%= image_tag "http://imgur.com/0UBcDcb.png", id: "modal-globe"%>
+          </div>
+        </div>
+      </div>
+      <div id="profileBox">
+        <div class="row">
+          <div class="small-8 small-centered medium-6 medium-centered 
+            large-4 large-centered columns">
+            <%= yield %>
+          </div>
         </div>
       </div>
     </div>
