@@ -4,23 +4,23 @@
     <div id="modal-back">
     </div>
     <div class="show" id="modal">
-      <div id = "globe-wrapper">
+      <div id="profile-wrapper">
         <div class="row">
-          <div class="hide-for-small medium-12 
+          <div class="hide-for-small medium-12
             medium-centered large-8 large-centered columns">
               <%= image_tag "http://i.imgur.com/0UBcDcb.png", id: "modal-globe" %>
           </div>
         </div>
-      </div>
-      <div id="profileBox">
-        <div class="row">
-          <div class="small-8 small-centered medium-6
-            medium-centered large-4 large-centered columns">
-            <%= render partial: "/profiles/form" %>
-            <%= link_to "I'll do this Later",
-              "#",
-              id: "close-modal",
-              class: "button tiny secondary"%>
+        <div id="profileBox">
+          <div class="row">
+            <div class="small-8 small-centered medium-6
+              medium-centered large-4 large-centered columns">
+              <%= render partial: "/profiles/form" %>
+              <%= link_to "I'll do this Later",
+                "#",
+                id: "close-modal",
+                class: "button tiny secondary"%>
+            </div>
           </div>
         </div>
       </div>
