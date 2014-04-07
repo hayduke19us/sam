@@ -4,8 +4,8 @@
   <%= text_field_tag :religion, nil, :placeholder => "jane darma" %>
   <h4 class="white">Rooms in your Home?</h4>
   <%= text_field_tag :rooms, nil, placeholder: "3"%>
-  <h4 class = "inline white">City is <%=current_user.city%>?</h4> 
-  <%= link_to "not correct", "#", id: "correct_city"%></br>
+  <h4 class = "inline white">City is <%=current_user.city%>?</h4>
+  <%= link_to "not correct", "#", id: "correct-city"%></br>
   <%= text_field_tag :city, nil, placeholder: "Paris", class: "hide", id: "city"%>
   <%= submit_tag "Create profile", class: "button", id: "create-profile"%>
 <% end %>

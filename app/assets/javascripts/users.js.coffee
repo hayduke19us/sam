@@ -1,11 +1,11 @@
 $ ->
-  $("#close_modal").click( ->
-    $("#modal").toggle()
-    $("#modal-back").toggle()
+  $( document ).on('click', "#close-modal", ->
+    $("#modal").fadeOut()
+    $("#modal-back").fadeOut()
     false
   )
 
-  $("#correct_city").click( ->
+  $( document ).on('click', "#correct-city", ->
     $("#city").toggle()
     false
   )
