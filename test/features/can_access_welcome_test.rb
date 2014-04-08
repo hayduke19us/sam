@@ -38,6 +38,15 @@ class CanAccessWelcomeTest < Capybara::Rails::TestCase
     assert within("div.dark-banner") { page.has_content?("How we keep your kids safe")}
   end
 
+  test "a third scope of view is wrapped with div.night-banner" do
+    assert within("div.night-banner") {page.has_content?("From the outside in")}
+  end
+
+  test "the footer also has login and sign up buttons" do
+    assert within("div.footer") {page.has_content?("Log in")}
+    assert within("div.footer") {page.has_content?("Sign up")}
+  end
+
 end
 
 #mobile ----------------------
@@ -49,8 +58,8 @@ class MobileVersion < Capybara::Rails::TestCase
     visit root_path
   end
 
-  test "6 images should be present" do
-    assert_equal 6, page.all("img").count
+  test "5 images should be present" do
+    assert_equal 5, page.all("img").count
   end
 
   test "questions are still visible" do

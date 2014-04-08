@@ -10,10 +10,13 @@ group :development do
   gem "minitest-rails"
   gem "hirb"
   gem "selenium-webdriver"
+  gem "sextant"
+  gem "hirb"
 end
 
 group :test do
   gem "minitest-rails-capybara"
+  gem "simplecov", '~> 0.7.1', :require => false
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

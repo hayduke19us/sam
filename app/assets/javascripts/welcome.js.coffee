@@ -27,10 +27,11 @@ $ ->
 
   scrollEffect ".banner", 1, 200, globeFadeIn
   scrollEffect ".dark-banner", 2, 100
+  scrollEffect ".night-banner", 3, 200
 
 
 
-  $("#parents-link").click( ->
+  $( document ).on("click", "#parents-link",  ->
     $( window ).scrollTop( $( "div.banner").height() ) 
     false
   )

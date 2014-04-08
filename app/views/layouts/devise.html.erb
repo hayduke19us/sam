@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Sam" %></title>
-
+    <%= favicon_link_tag "big-globe.png" %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr"%>
     <%= javascript_include_tag "application" %>
@@ -13,10 +13,22 @@
   </head>
 
   <body>
-    <div class="banner">
-      <div class="row">
-        <div class="small-4 large-4">
-        <%= yield %>
+    <div class="extended-banner">
+      <div id="globe-wrapper">
+        <div class="row">
+          <div class="hide-for-small medium-12 medium-centered 
+            large-12 large-centered columns">
+            <%= image_tag "big-globe.png", id: "modal-globe"%>
+          </div>
+        </div>
+        <div id="profileBox">
+          <div class="row">
+            <div class="small-8 small-centered medium-6 medium-centered 
+              large-4 large-centered columns">
+              <%= yield %>
+              <div id="test"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

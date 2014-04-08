@@ -2,34 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$background-blue: #73b9e6;
-$question: white;
-
-$img-shadow: 0px 0px 5px 1px darken($background-blue, 10);
-@mixin box-shadow($shadow){
-  -mox-box-shadow: $shadow;
-  -webkit-box-shadow: $shadow;
-  -box-shadow: $shadow;
-}
-
-.left {float: left;}
-.marg-top {margin-top: 30px;}
-.white {color: white;
-}
-.dark-blue {color: darken($background-blue, 40);}
-.inline {display: inline;}
-
-.banner {background-color: $background-blue;
-         height: auto;
-}
-
-.dark-banner {background-color: darken($background-blue, 10);
-              height: 100%;
-}
-
-.night-banner { background-color: darken($background-blue, 20);
-                height: 100%;
-}
+@import 'global';
 
 blue-dot {padding: 3px;
          background-color: darken($background-blue, 30);
@@ -46,15 +19,8 @@ blue-dot {padding: 3px;
 
 #sign-in {margin-top: 20px;}
 
-.display-box {background-color: white;
-              margin-right: 10px;
-              text-align: center;
-              padding: 30px;
-}
-.display-box:hover {-webkit-transform: scale(1.1,1.1);
-}
-
 #symposium {margin: 30px 30px 60px 0px;}
+
 #question {color: white;
            font-size: 20px;
          }
@@ -90,3 +56,10 @@ blue-dot {padding: 3px;
 #safe {color: white;
        font-family: "Lobster";
 }
+
+#connect-title {font-family: "Lobster";
+                color: white;
+                padding-top: 30px;
+}
+
+#copyright {color: darken($background-blue, 40);}

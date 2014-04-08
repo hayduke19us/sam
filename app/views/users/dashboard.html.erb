@@ -1,31 +1,34 @@
-<div class="banner">
-  <div class="row">
-    <div class="small-12 large-12 columns">
-      <% unless user_signed_in? %>
-        <%=link_to new_session_path, class: "button"%>
-      <% end %>
-    </div>
-  </div>
-
+<div class="extended-banner">
+  <%= link_to "For Parents", "#", class: "button"%>
   <% unless current_user.profile%>
+    <div id="modal-back">
+    </div>
     <div class="show" id="modal">
-      <div id="profileBox">
-        <%= render partial: "/profiles/form" %>
-        <%= link_to "I'll do this Later", 
-          "#", 
-          id: "close_modal", 
-          class: "button tiny secondary"%>
+      <div id="profile-wrapper">
+        <div class="row">
+          <div class="hide-for-small medium-12
+            medium-centered large-8 large-centered columns">
+              <%= image_tag "http://i.imgur.com/0UBcDcb.png", id: "modal-globe" %>
+          </div>
+        </div>
+        <div id="profileBox">
+          <div class="row">
+            <div class="small-8 small-centered medium-6
+              medium-centered large-4 large-centered columns">
+              <%= render partial: "/profiles/form" %>
+              <%= link_to "I'll do this Later",
+                "#",
+                id: "close-modal",
+                class: "button tiny secondary"%>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   <%end%>
   <div class="row">
-    <div class="small-12 large-6">
-      <h4>We are constantly grouped by our simularities. This
-        isolates us in an echo chamber. Reach out ask questions to those
-        who are different. In fact here you can't ask your friends for advice.
-        We won't let you. We only match you with those who are far away from where
-        you are comfortable.</h4>
-      <!--partial with form for question--!>
+    <div class="small-12 large-12 columns">
+      <h1 class="lobster dark-blue">Dashboard</h1>
     </div>
   </div>
 </div>
