@@ -7,6 +7,7 @@ $background-blue: #73b9e6;
 .inline {display: inline;}
 .extended-banner {height: 100%;
                   background-color: $background-blue;
+
 }
 
 .lobster {font-family: "Lobster"}
@@ -23,9 +24,12 @@ $background-blue: #73b9e6;
              z-index: 1000;
 }
 
-
 #modal-globe {position: absolute;
               opacity: 0.3;
+}
+
+#globe-wrapper {overflow-y: scroll;
+                height: 100%;
 }
 
 #modal {background-color: transparent;
@@ -47,5 +51,4 @@ $background-blue: #73b9e6;
              padding: 30px;
              border-radius: 5px;
              margin-top: 5%;
-
 }

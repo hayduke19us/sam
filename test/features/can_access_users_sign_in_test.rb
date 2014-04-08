@@ -6,30 +6,29 @@ class CanAccessUsersSignInTest < Capybara::Rails::TestCase
     visit new_user_session_path
   end
 
-  test "sanity" do
-    assert page.has_content?, "Sign in"
+  test "Log in title is present" do
+    assert page.has_content? "Log In"
   end
 
-  test "guardian log in view is visible" do
-    assert page.has_content?("Guardian Authentication")
+  test "user log in form is visible" do
+    assert page.has_content?, "form#new_user"
   end
 
-  test "guard-login button is visible" do
-    assert find("#guard-login").visible?
+  test "the globe is present" do
+    assert page.find("img", visible: true)
   end
 
-  test "user-login div is not visible" do
-    assert find("#login", visible: false)
+end
+
+class LogInMobileVersion < Capybara::Rails::TestCase 
+
+  def setup
+    view MOBILE_P
+    visit new_user_session_path
   end
 
-  test "when the login button is clicked it hides guard-login" do
-    click_link('login')
-    assert find("#guardian", visible: false)
-  end
-
-  test "when the login button clicked usr-login isnow visible" do
-    click_link('login')
-    assert find("#login", visible: true)
+  test "the globe is hidden" do
+    assert page.find("img", visible: false)
   end
 
 end
