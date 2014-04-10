@@ -29,6 +29,11 @@ $ ->
       false
     )
 
+  $("#for-parents-link").hover( ->
+    $("#guard-logged-in").toggle( "fadeIn" )
+    false
+  )
+
 
 
 

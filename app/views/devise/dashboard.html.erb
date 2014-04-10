@@ -1,7 +1,5 @@
 <div class="extended-banner">
-  <%= link_to "For Parents", "#", class: "button", id: "for-parents-link" %>
-  <span class="hide dark-blue" id="guard-logged-in">
-    <%= current_guardian.email %> logged in</span>
+  <%= link_to "For Parents", "#", class: "button"%>
   <% unless current_user.profile%>
     <div id="modal-back">
     </div>
