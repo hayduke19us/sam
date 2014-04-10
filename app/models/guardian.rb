@@ -5,4 +5,5 @@ class Guardian < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :user
+
 end
