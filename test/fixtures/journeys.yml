@@ -1,0 +1,10 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+franny_journey:
+  name: "franny_journey"
+  user: franny
+
+zoey_journey:
+  name: "franny_journey"
+  user: zooey

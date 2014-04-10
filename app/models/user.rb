@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 
   has_one :profile
   has_one :guardian
+  has_many :journeys
+
+  validates :email, :encrypted_password, presence: true
 
   geocoded_by :ip_address, latitude: :lat, longitude: :long
 

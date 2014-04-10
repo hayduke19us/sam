@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409213139) do
+ActiveRecord::Schema.define(version: 20140410231449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 20140409213139) do
 
   add_index "guardians", ["email"], name: "index_guardians_on_email", unique: true, using: :btree
   add_index "guardians", ["reset_password_token"], name: "index_guardians_on_reset_password_token", unique: true, using: :btree
+
+  create_table "journeys", force: true do |t|
+    t.string   "name"
+    t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "profiles", force: true do |t|
     t.string   "religion"
