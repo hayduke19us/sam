@@ -1,0 +1,10 @@
+
+franny_dad:
+  email: franny_dad@gmail.com
+  encrypted_password: franny_dad123
+  user: franny
+
+zoey_dad:
+  email: zoey_dad@gmail.com
+  encrypted_password: zoey_dad123
+  user: zoey
