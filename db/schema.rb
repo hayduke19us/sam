@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20140410231449) do
 
   create_table "journeys", force: true do |t|
     t.string   "name"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
