@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :authenticate_guardian!
   before_action :authenticate_users_guardian
+  before_action :authenticate_guardian!
 
   def dashboard
   end

@@ -1,13 +1,13 @@
 class Guardians::RegistrationsController < Devise::RegistrationsController
 
-  before_action :authenticate_user!
-
   def new
     super
   end
 
   def create
-    super
+    super do |resource|
+      resource.user_id = current_user.id
+    end
   end
 
   def update
@@ -18,9 +18,9 @@ class Guardians::RegistrationsController < Devise::RegistrationsController
 
     def sign_up_params
       params.require(:guardian).permit( :email,
-                                       :password,
-                                       :password_confirmation,
-                                       :user_id )
+                                        :password,
+                                        :password_confirmation,
+                                        :user_id )
     end
 
 end
