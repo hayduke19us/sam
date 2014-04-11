@@ -1,0 +1,8 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+franny_journey_itenerary:
+  journey: franny_journey
+
+zoey_journey_itenerary:
+  journey: zoey_journey
