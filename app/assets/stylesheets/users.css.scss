@@ -54,3 +54,11 @@ $background-blue: #73b9e6;
              border-radius: 5px;
              margin-top: 5%;
 }
+
+//map
+#map img { 
+  max-width: none;
+}
+#map label { 
+  width: auto; display:inline; 
+} 
