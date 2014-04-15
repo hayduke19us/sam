@@ -4,6 +4,12 @@ class UsersController < ApplicationController
   before_action :authenticate_guardian!
 
   def dashboard
+    @users = User.all
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.lat
+      marker.lng user.long
+  end
+
   end
 
   def authenticate_users_guardian
