@@ -15,7 +15,6 @@
 //= require foundation
 //= require underscore
 //= require gmaps/google
-//= require map
 //= require turbolinks
 //= require_tree .
 
