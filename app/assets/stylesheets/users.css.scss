@@ -7,6 +7,8 @@ li {list-style: none;}
 
 .inline {display: inline;}
 
+.white {color: white;}
+
 .extended-banner {height: 100%;
                   background-color: $background-blue;
 
@@ -14,9 +16,24 @@ li {list-style: none;}
 
 #nav {position: relative;
       z-index: 2;
-      width: 100%;
+      width: 200px;
       top: 0;
 
+}
+
+#close-dash-wrap {padding: 20px;}
+
+.dash-knob { width: 100%;
+             padding: 20px;
+             margin-top: 5px;
+             background-color: darken($background-blue, 30); 
+             -webkit-transition: background-color 300ms ease-out;
+
+
+}
+
+.dash-knob:hover {background-color: darken($background-blue, 40);
+                  color: white;
 }
 
 .lobster {font-family: "Lobster"}
@@ -26,7 +43,7 @@ li {list-style: none;}
 .center-text {text-align: center;}
 
 .on-top { position: relative;
-          z-index: 200;
+          z-index: 2;
 }
 
 #modal-back {height: 100%;
@@ -98,7 +115,6 @@ li {list-style: none;}
            position: relative;
            float: right;
            z-index: 3;
-           background-color: $background-blue;
-           padding: 10px;
+           background-color: darken($background-blue, 20);
            top: 0;
 }

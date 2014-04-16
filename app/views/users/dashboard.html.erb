@@ -2,27 +2,45 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 
   <div class="hide" id="side-bar">
-    <span><%=link_to "X", "#", class: "on-top", id: "close-side" %><span>
+    <div id="close-dash-wrap">
+      <span><%=link_to "X", "#", class: "on-top white", id: "close-side" %><span>
+    </div>
     <div class="center-text" id="dash-controls">
       <ul>
+        <%= link_to raw( "<li class='dash-knob'>Take a Journey</li>"),
+          "#", class: "white" %>
+
         <% if current_user.profile %>
-          <li> <%= link_to "Profile", 
-            edit_profile_path(current_user.profile) %></li> 
+          <%= link_to raw( "<li class='dash-knob'>Log Out</li>"),
+            edit_profile_path(current_user.profile), 
+            class: 'white' %>
         <% elsif %>
-          <li><%= link_to "Create Profile", "#", 
-            id: "new-profile", class: "on-top center-text" %></li>
+          <%= link_to raw( "<li class='dash-knob'>Create a Profile</li>"),
+            "#", class: 'white', id: "new-profile" %>
         <% end %>
 
-        <li><%= link_to "log out",destroy_user_session_path, 
-          method: "delete", class: "on-top center-text" %></li>
+        <%= link_to raw( "<li class='dash-knob'>Map Options</li>"),
+          "#", class: "white" %>
 
+        <%= link_to raw( "<li class='dash-knob'>Questions</li>"),
+          "#", class: "white" %>
+
+        <%= link_to raw( "<li class='dash-knob'>Answers</li>"),
+          "#", class: "white" %>
+
+        <%= link_to raw( "<li class='dash-knob'>History</li>"),
+          "#", class: "white" %>
+
+        <%= link_to raw( "<li class='dash-knob'>Log Out</li>"),
+          destroy_user_session_path, method: "delete", 
+          class: 'white' %>
       </ul>
     </div>
   </div>
 
   <div id = "nav" >
     <%= link_to "For Parents", "#", class: "button", id: "for-parents-link" %>
-    <%= link_to "Dashboard", "#", class: "button right", id: "dashboard"%>
+    <%= link_to "Dashboard", "#", class: "button", id: "dashboard"%>
   </div>
 
 
