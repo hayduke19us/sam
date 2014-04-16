@@ -1,36 +1,110 @@
-<div class="extended-banner">
-  <%= link_to "For Parents", "#", class: "button", id: "for-parents-link" %>
-  <span class="hide dark-blue" id="guard-logged-in">
-    <%= current_guardian.email %> logged in</span>
-  <% unless current_user.profile%>
-    <div id="modal-back">
+<div class="hide" id="side-bar">
+  <div id="close-dash-wrap">
+    <span><%=link_to "X", "#", class: "on-top white", id: "close-side" %><span>
+  </div>
+  <div class="center-text" id="dash-controls">
+    <ul>
+      <h2 class="lobster">Dashboard</h2>
+      <%= link_to raw( "<li class='dash-knob'>Take a Journey</li>"),
+        "#", class: "white" %>
+
+      <% if current_user.profile %>
+        <%= link_to raw( "<li class='dash-knob'>Profile</li>"),
+          edit_profile_path(current_user.profile), 
+          class: 'white' %>
+      <% elsif %>
+        <%= link_to raw( "<li class='dash-knob'>Create a Profile</li>"),
+          "#", class: 'white', id: "new-profile" %>
+      <% end %>
+
+      <%= link_to raw( "<li class='dash-knob'>Map Options</li>"),
+        "#", class: "white", id: "map-options" %>
+
+      <%= link_to raw( "<li class='dash-knob'>Questions</li>"),
+        "#", class: "white" %>
+
+      <%= link_to raw( "<li class='dash-knob'>Answers</li>"),
+        "#", class: "white" %>
+
+      <%= link_to raw( "<li class='dash-knob'>History</li>"),
+        "#", class: "white" %>
+
+      <%= link_to raw( "<li class='dash-knob'>Log Out</li>"),
+        destroy_user_session_path, method: "delete", 
+        class: 'white' %>
+    </ul>
+  </div>
+  <div class="hide center-text" id="map-controls">
+    <%= link_to "Dashboard", "#", class: "button small", id: "back-dashboard"%>
+    <h2 class="lobster">Map Options</h2>
+    <div id="map-schemes">
+      <%= link_to image_tag("luner_map.png"), 
+      users_map_choice_path(map_choice: "luner_map"), 
+        remote: true,
+        id: "luner",
+        class: "th th-size" %>
+      <%= link_to image_tag("cobalt_map.png"), 
+        users_map_choice_path(map_choice: "cobalt_map"), 
+        remote: true,
+        id: "luner",
+        class: "th th-size" %>
+      <%= link_to image_tag("hard_edges_map.png"), 
+        users_map_choice_path(map_choice: "hard_edges_map"), 
+        remote: true,
+        id: "luner",
+        class: "th th-size" %>
+      <%= link_to image_tag("pale_dawn_map.png"), 
+        users_map_choice_path(map_choice: "pale_dawn_map"), 
+        remote: true,
+        id: "luner",
+        class: "th th-size" %>
+       <%= link_to image_tag("default_map.png"), 
+         users_map_choice_path(map_choice: "default_map"), 
+         remote: true,
+         id: "luner",
+         class: "th th-size" %>
     </div>
-    <div class="show" id="modal">
-      <div id="profile-wrapper">
-        <div class="row">
-          <div class="hide-for-small medium-12
-            medium-centered large-8 large-centered columns">
-              <%= image_tag "big-globe.png", id: "modal-globe" %>
-          </div>
+
+
+
+
+  </div>
+</div>
+<div id = "nav" >
+  <%= link_to "For Parents", "#", class: "button", id: "for-parents-link" %>
+  <%= link_to "Dashboard", "#", class: "button", id: "dashboard"%>
+</div>
+<div id="map-wrapper">
+  <div id="map"></div>
+</div>
+<% unless current_user.profile%>
+  <div id="modal-back">
+  </div>
+  <div class="show" id="modal">
+    <div id="profile-wrapper">
+      <div class="row">
+        <div class="hide-for-small medium-12
+          medium-centered large-8 large-centered columns">
+            <%= image_tag "big-globe.png", id: "modal-globe" %>
         </div>
-        <div id="profileBox">
-          <div class="row">
-            <div class="small-8 small-centered medium-6
-              medium-centered large-4 large-centered columns">
-              <%= render partial: "/profiles/form" %>
-              <%= link_to "I'll do this Later",
-                "#",
-                id: "close-modal",
-                class: "button tiny secondary"%>
-            </div>
+      </div>
+      <div id="profileBox">
+        <div class="row">
+          <div class="small-8 small-centered medium-6
+            medium-centered large-4 large-centered columns">
+            <%= render partial: "/profiles/form" %>
+            <%= link_to "I'll do this Later",
+              "#",
+              id: "close-modal",
+              class: "button tiny secondary"%>
           </div>
         </div>
       </div>
     </div>
-  <%end%>
-  <div class="row">
-    <div class="small-12 large-12 columns">
-      <h1 class="lobster dark-blue">Dashboard</h1>
-    </div>
   </div>
+<%end%>
+<div id="map-space">
+  <script>
+    <%= render @map %>
+  </script>
 </div>

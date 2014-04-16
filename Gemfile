@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem "devise"
 gem "geocoder"
 gem "foundation-rails"
+gem "gmaps4rails"
 
 group :development do
   gem "better_errors"
