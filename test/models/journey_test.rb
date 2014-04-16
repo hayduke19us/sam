@@ -7,7 +7,7 @@ class JourneyTest < ActiveSupport::TestCase
   end
 
   test "a journey without a name is invalid" do
-    @franny_journey.name = nil 
+    @franny_journey.name = nil
     refute @franny_journey.valid?
   end
 
@@ -31,5 +31,16 @@ class JourneyTest < ActiveSupport::TestCase
     zoey = users(:zoey)
     journey = Journey.new(name: "franny_journey", user: zoey)
     assert journey.valid?
+  end
+
+  test "a journey has a distance" do
+    assert_equal "short", @franny_journey.distance
+  end
+
+  test "when a journey is an itenerary is created" do
+    franny = users(:franny)
+    journey = Journey.new name: "first_trip", distance: "short", user: franny
+    journey.save
+    assert journey.itenerary
   end
 end

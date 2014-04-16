@@ -3,8 +3,10 @@
 
 franny_journey:
   name: "franny_journey"
+  distance: "short"
   user: franny
 
 zoey_journey:
   name: "franny_journey"
+  distance: "long"
   user: zooey
