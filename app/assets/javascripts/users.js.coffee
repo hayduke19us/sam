@@ -25,13 +25,15 @@ $ ->
   )
 
   showLogin = (link, div1, div2) ->
-    $( document ).on('click', link,  ->
+    $( document ).on('click', link, ->
       complete = ->
         $(div1).fadeIn()
         false
       $(div2).fadeOut( complete )
       false
-    )
+     )
+
+  showLogin "#map-options", "#dash-controls", "#map-controls"
    
   $( document ).on("click", "#dashboard", ->
      $("#dashboard").toggle()

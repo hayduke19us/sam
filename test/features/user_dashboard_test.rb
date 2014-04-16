@@ -21,7 +21,7 @@ class UserDashboardTest < Capybara::Rails::TestCase
   end
 
   test "dashboard has a pinup map within a map wrapper" do
-    assert within("#map-wrapper") { page.find("#user-map") }
+    assert within("#map-wrapper") { page.find("#map") }
   end
 
 end

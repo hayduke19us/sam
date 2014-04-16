@@ -7,11 +7,12 @@
     </div>
     <div class="center-text" id="dash-controls">
       <ul>
+        <h2 class="lobster">Dashboard</h2>
         <%= link_to raw( "<li class='dash-knob'>Take a Journey</li>"),
           "#", class: "white" %>
 
         <% if current_user.profile %>
-          <%= link_to raw( "<li class='dash-knob'>Log Out</li>"),
+          <%= link_to raw( "<li class='dash-knob'>Profile</li>"),
             edit_profile_path(current_user.profile), 
             class: 'white' %>
         <% elsif %>
@@ -20,7 +21,7 @@
         <% end %>
 
         <%= link_to raw( "<li class='dash-knob'>Map Options</li>"),
-          "#", class: "white" %>
+          "#", class: "white", id: "map-options" %>
 
         <%= link_to raw( "<li class='dash-knob'>Questions</li>"),
           "#", class: "white" %>
@@ -37,6 +38,9 @@
       </ul>
     </div>
   </div>
+  <div id="map-controls">  
+    <%= link_to "X", "#", id: "Close-map-controls"%>
+  </div.>
   <div id = "nav" >
     <%= link_to "For Parents", "#", class: "button", id: "for-parents-link" %>
     <%= link_to "Dashboard", "#", class: "button", id: "dashboard"%>
