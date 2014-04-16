@@ -19,22 +19,17 @@ $ ->
   closeModal "#close-modal", "#modal", "#modal-back", "#map-wrapper", "#side-bar"
   openModal "#new-profile", "#modal", "#modal-back", "#map-wrapper", "#side-bar"
 
-  $( document ).on('click', "#correct-city", ->
-    $("#city").toggle()
-    false
-  )
-
-  showLogin = (link, div1, div2) ->
-    $( document ).on('click', link, ->
+  showDiv = (link, div1, div2) ->
+    $( document ).on("click", link, ->
       complete = ->
-        $(div1).fadeIn()
-        false
-      $(div2).fadeOut( complete )
+        $(div2).fadeIn()
+      $(div1).fadeOut( complete )
       false
      )
 
-  showLogin "#map-options", "#dash-controls", "#map-controls"
-   
+  showDiv "#map-options", "#dash-controls", "#map-controls"
+  showDiv "#back-dashboard", "#map-controls", "#dash-controls"
+
   $( document ).on("click", "#dashboard", ->
      $("#side-bar").toggle() 
      false
@@ -44,3 +39,9 @@ $ ->
     $("#side-bar").fadeOut()
     false
   )
+
+  $( document ).on('click', "#correct-city", ->
+    $("#city").toggle()
+    false
+  )
+

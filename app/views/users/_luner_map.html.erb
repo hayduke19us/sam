@@ -1,0 +1,24 @@
+handler = Gmaps.build('Google');
+handler.buildMap({ 
+  internal: {id: 'map'},
+  provider: {
+    backgroundColor: "#021019",
+    zoom: 2,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    panControl: false,
+    zoomControlOptions: {position:google.maps.ControlPosition.BOTTOM_LEFT,
+                         style:google.maps.ZoomControlStyle.SMALL 
+                         },
+    styles:   [{"stylers":[{"hue":"#ff1a00"},
+                           {"invert_lightness":true},
+                           {"saturation":-100},
+                           {"lightness":33},{"gamma":0.5}]},
+                           {"featureType":"water","elementType":"geometry",
+              "stylers":[{"color":"#2D333C"}]}]
+  }
+}, 
+  function(){
+     markers = handler.addMarkers(<%=raw @hash.to_json %>)
+     handler.bounds.extendWith(markers);
+  }
+)

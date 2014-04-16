@@ -1,5 +1,6 @@
 Sam::Application.routes.draw do
-
+  
+  get "users/map_choice"
   get "welcome/index"
 
   devise_for :users

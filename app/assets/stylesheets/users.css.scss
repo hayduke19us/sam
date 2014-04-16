@@ -3,11 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import 'global';
+
 li {list-style: none;}
 
 .inline {display: inline;}
 
 .white {color: white;}
+
+.th-size {height: auto;
+          width: 150px;
+          margin-top: 4px;
+}
+
+.light-pad {margin-top: 3px;}
 
 .extended-banner {height: 100%;
                   background-color: $background-blue;
@@ -117,4 +125,8 @@ li {list-style: none;}
            z-index: 3;
            background-color: darken($background-blue, 20);
            top: 0;
+}
+
+#map-schemes {height: 400px;
+              overflow: auto;
 }
