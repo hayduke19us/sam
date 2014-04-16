@@ -37,23 +37,13 @@
       </ul>
     </div>
   </div>
-
   <div id = "nav" >
     <%= link_to "For Parents", "#", class: "button", id: "for-parents-link" %>
     <%= link_to "Dashboard", "#", class: "button", id: "dashboard"%>
   </div>
-
-
-
   <div id="map-wrapper">
     <div id="map"></div>
   </div>
-
-  <div class="row">
-    <div class="small-12 large-12">
-    </div>
-  </div>
-
   <% unless current_user.profile%>
     <div id="modal-back">
     </div>
