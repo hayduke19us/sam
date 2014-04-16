@@ -36,14 +36,11 @@ $ ->
   showLogin "#map-options", "#dash-controls", "#map-controls"
    
   $( document ).on("click", "#dashboard", ->
-     $("#dashboard").toggle()
      $("#side-bar").toggle() 
      false
    )
 
   $( document ).on( "click", "#close-side", ->
-    complete = ->
-      $("#dashboard").fadeIn()
-    $("#side-bar").fadeOut( complete )
+    $("#side-bar").fadeOut()
     false
   )
