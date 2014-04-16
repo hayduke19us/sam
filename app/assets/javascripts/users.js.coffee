@@ -4,6 +4,7 @@ $ ->
       $(modal).fadeOut()
       $(option).fadeOut() if option
       $(option2).fadeIn() if option2
+    
       false
     )
   openModal = (link, modal, option=null, option2=null) ->
@@ -14,8 +15,8 @@ $ ->
       false
     )
 
-  closeModal "#close-modal", "#modal", "#modal-back", "#map"
-  openModal "#new-profile", "#modal", "#modal-back", "#map"
+  closeModal "#close-modal", "#modal", "#modal-back", "#map-wrapper"
+  openModal "#new-profile", "#modal", "#modal-back", "#map-wrapper"
 
   $( document ).on('click', "#correct-city", ->
     $("#city").toggle()
@@ -30,12 +31,16 @@ $ ->
       $(div2).fadeOut( complete )
       false
     )
+   
+  $( document ).on("click", "#dashboard", ->
+     $("#dashboard").toggle()
+     $("#side-bar").toggle() 
+     false
+   )
 
-  $("#for-parents-link").hover( ->
-    $("#guard-logged-in").toggle( "fadeIn" )
+  $( document ).on( "click", "#close-side", ->
+    complete = ->
+      $("#dashboard").fadeIn()
+    $("#side-bar").fadeOut( complete )
     false
   )
-
-
-
-

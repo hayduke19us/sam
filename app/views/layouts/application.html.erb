@@ -13,21 +13,6 @@
   </head>
 
   <body>
-    <% if current_user %>
-      <%= link_to "log out",
-        destroy_user_session_path,
-        method: "delete",
-        class: "button right" %>
-
-      <% if current_user.profile %>
-        <%= link_to "Profile", edit_profile_path(current_user.profile), 
-          class: "button right"%>
-      <% elsif %>
-        <%= link_to "Create Profile", "#", class: "button right", 
-          id: "new-profile" %>
-      <% end %>
-    <% end %>
-
     <%= yield %>
   </body>
 </html>
