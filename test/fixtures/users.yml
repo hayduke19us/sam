@@ -3,13 +3,47 @@
 franny:
   email: franny@gmail.com
   encrypted_password: 123franny
-  current_sign_in_ip: "127.0.0.1"
-  lat: 1.1
-  long: 1.2
+  current_sign_in_ip: "127.0.0.0"
+  lat:  32.7801399
+  long: -96.8004510
+  city: "Dallas"
 
 zoey:
   email: zoey@gmail.com
   encrypted_password: 123zoey
   current_sign_in_ip: "127.0.0.1"
-  lat: 1.1
-  long: 1.2
+  lat:  47.6062095
+  long: -122.3320708
+  city: "Seattle"
+
+buddy:
+  email: buddy@gmail.com
+  encrypted_password: 123buddy
+  current_sign_in_ip: "127.0.0.1"
+  lat: 48.856614 
+  long: 2.3522219 
+  city: "Paris" 
+
+seymore:
+  email: seymore@gmail.com
+  encrypted_password: seymorebuddy
+  current_sign_in_ip: "127.0.0.1"
+  lat: 44.0581728 
+  long: -121.3153096 
+  city: "Austin"
+
+matt:
+  email: matt@gmail.com
+  encrypted_password: 123matt
+  current_sign_in_ip: "127.0.0.1"
+  lat: 53.88980000000001 
+  long: -166.5422 
+  city: "Dutch Harbor"
+
+josh:
+  email: josh@gmail.com
+  encrypted_password: 123josh
+  current_sign_in_ip: "127.0.0.1"
+  lat: 51.508515 
+  long: -0.1254872 
+  city: "London"

@@ -37,4 +37,38 @@ class User < ActiveRecord::Base
     self.profile.religion
   end
 
+  #returns distance of city from current_user
+  def range_finder length
+    self.distance_to(length) 
+  end
+
+  #returns an array of users that are 'distance' away from current_user
+  def by_distance distance
+    array = []
+    users = User.where.not(id: self)
+    users.each do |peeps|
+      dist = self.range_finder(peeps.geo) 
+      if dist > distance.to_i
+        array << peeps
+      end
+    end
+    array
+  end
+
+  #returns one random user from an array of users
+  def self.random array
+    id_count = array.count
+    array[rand(id_count)]
+  end
+
+  def geo
+    [self.lat, self.long]
+  end
+
+  #returns a base user for the first interaction in a journey
+  #all other interactions will be based of this interaction
+  def base_interaction distance
+    User.random(self.by_distance(distance))
+  end
+
 end
