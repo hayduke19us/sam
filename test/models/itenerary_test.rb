@@ -34,7 +34,4 @@ class IteneraryTest < ActiveSupport::TestCase
     assert_equal 6, itenerary.interactions.count
   end
 
-
-
-
 end

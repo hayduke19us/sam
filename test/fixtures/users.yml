@@ -20,30 +20,54 @@ buddy:
   email: buddy@gmail.com
   encrypted_password: 123buddy
   current_sign_in_ip: "127.0.0.1"
-  lat: 48.856614 
-  long: 2.3522219 
-  city: "Paris" 
+  lat: 48.856614
+  long: 2.3522219
+  city: "Paris"
 
 seymore:
   email: seymore@gmail.com
   encrypted_password: seymorebuddy
   current_sign_in_ip: "127.0.0.1"
-  lat: 44.0581728 
-  long: -121.3153096 
+  lat: 44.0581728
+  long: -121.3153096
   city: "Austin"
 
 matt:
   email: matt@gmail.com
   encrypted_password: 123matt
   current_sign_in_ip: "127.0.0.1"
-  lat: 53.88980000000001 
-  long: -166.5422 
+  lat: 53.88980000000001
+  long: -166.5422
   city: "Dutch Harbor"
 
 josh:
   email: josh@gmail.com
   encrypted_password: 123josh
   current_sign_in_ip: "127.0.0.1"
-  lat: 51.508515 
-  long: -0.1254872 
+  lat: 51.508515
+  long: -0.1254872
   city: "London"
+
+sarah:
+  email: sarah@gmail.com
+  encrypted_password: 123sarh
+  current_sign_in_ip: "127.0.0.1"
+  lat: 32.0852999
+  long: 34.78176759999999
+  city: "Tel Aviv"
+
+martin:
+  email: martin@gmail.com
+  encrypted_password: 123martin
+  current_sign_in_ip: "127.0.0.1"
+  lat: 37.7749295
+  long: -122.4194155
+  city: "San Fransico"
+
+bilbo:
+  email: bilbo@gmail.com
+  encrypted_password: 123bilbo
+  current_sign_in_ip: "127.0.0.1"
+  lat: 40.4167754
+  long: -3.7037902
+  city: "Mardrid"

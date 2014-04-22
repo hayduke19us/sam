@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  include Shaman
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
@@ -10,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :journeys
 
   validates :email, :encrypted_password, presence: true
+
+  scope :except_me, ->(user) { where.not(id: user) }
 
   geocoded_by :ip_address, latitude: :lat, longitude: :long
 
@@ -43,13 +48,12 @@ class User < ActiveRecord::Base
   end
 
   #returns an array of users that are 'distance' away from current_user
-  def by_distance distance
+  def by_distance distance, operator
     array = []
-    users = User.where.not(id: self)
-    users.each do |peeps|
-      dist = self.range_finder(peeps.geo) 
-      if dist > distance.to_i
-        array << peeps
+    User.except_me(self).each do |user|
+      user_dist = self.range_finder(user.geo) 
+      if user_dist.send(operator, distance)
+        array << user
       end
     end
     array
@@ -68,7 +72,11 @@ class User < ActiveRecord::Base
   #returns a base user for the first interaction in a journey
   #all other interactions will be based of this interaction
   def base_interaction distance
-    User.random(self.by_distance(distance))
+    User.random(self.by_distance(distance, :>))
+  end
+
+  def next_interaction distance
+    User.random(self.by_distance(distance, :<))
   end
 
 end
