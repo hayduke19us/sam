@@ -38,17 +38,20 @@ class JourneyTest < ActiveSupport::TestCase
   end
 
   test "when a short journey is saved an itenerary is created" do
-    franny = users(:franny)
-    journey = Journey.new name: "first_trip", distance: "short", user: franny
+    journey =  create_a_journey "short"
     journey.save
     assert journey.itenerary
   end
 
   test "when a long journey is saved an itenerary is created" do
-    franny = users(:franny)
-    journey = Journey.new name: "first_trip", distance: "long", user: franny
+    journey = create_a_journey "long"
     journey.save
     assert journey.itenerary
+  end
+
+  def create_a_journey distance
+    franny = users(:franny) 
+    Journey.new name: "first_trip", distance: distance, user: franny
   end
 
 

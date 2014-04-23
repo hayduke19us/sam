@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
     array = []
     User.except_me(self).each do |user|
       user_dist = self.range_finder(user.geo)
-      if user_dist.send(operator, distance)
+      if user_dist.send(operator, distance) and user_dist > distance/3 
         array << user
       end
     end
