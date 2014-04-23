@@ -51,8 +51,8 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 1679.4585602167692, @franny.range_finder(zoey.geo)
   end
 
-  test "should return 3 users by distance from self" do
-    assert_equal 6, @franny.by_distance(3000, :>).count
+  test "should return 5 users by distance from self" do
+    assert_equal 5, @franny.by_distance(3000, :>).count
   end
 
   test "should return all users because all are farther then distance arg" do
