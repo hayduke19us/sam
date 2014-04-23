@@ -8,9 +8,9 @@ class Itenerary < ActiveRecord::Base
 
   after_save :create_interactions
 
-  def create_interactions 
+  def create_interactions
     if self.journey.distance == "short"
-      base = self.base_interaction 1000 
+      base = self.base_interaction 1000
       self.interaction_observer base, "#base"
       self.interaction_increment self.interactions.first, 3
     elsif self.journey.distance == "long"

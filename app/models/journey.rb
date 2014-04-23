@@ -1,15 +1,18 @@
 class Journey < ActiveRecord::Base
+
+  include Shaman
+
   belongs_to :user
   has_one :itenerary
 
   validates :name, :user_id, presence: true
   validates :user_id, uniqueness: { scope: :name }
 
-  after_save :create_itenerary
+  after_save :begin_journey
 
-  def create_itenerary
-    itenerary = Itenerary.new(journey_id: self.id)
-    itenerary.save
+  def begin_journey
+    journey =  Shaman::Journey.new journey: self
+    journey.create_itenerary
   end
 
 end

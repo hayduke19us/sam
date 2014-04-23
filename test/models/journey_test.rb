@@ -36,13 +36,12 @@ class JourneyTest < ActiveSupport::TestCase
   test "a journey has a distance" do
     assert_equal "short", @franny_journey.distance
   end
-=begin
+
   test "when a journey is saved an itenerary is created" do
     franny = users(:franny)
     journey = Journey.new name: "first_trip", distance: "short", user: franny
     journey.save
     assert journey.itenerary
   end
-=end
 
 end
