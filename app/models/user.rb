@@ -42,16 +42,18 @@ class User < ActiveRecord::Base
     self.profile.religion
   end
 
-  #returns distance of city from current_user
-  def range_finder length
-    self.distance_to(length) 
+  #returns distance from city, or lat and long to current_user
+  #I'm seperating this geocode function in case a better option 
+  #exist
+  def range_finder destination
+    self.distance_to(destination)
   end
 
   #returns an array of users that are 'distance' away from current_user
   def by_distance distance, operator
     array = []
     User.except_me(self).each do |user|
-      user_dist = self.range_finder(user.geo) 
+      user_dist = self.range_finder(user.geo)
       if user_dist.send(operator, distance)
         array << user
       end
