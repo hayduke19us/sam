@@ -16,22 +16,4 @@ class IteneraryTest < ActiveSupport::TestCase
     refute @itenerary.valid?
   end
 
-  test "when an short journey itenerary is saved 3 interactions are created" do
-    franny = users( :franny )
-    journey = Journey.create( name: "some_journey",
-                              user: franny,
-                              distance: "short" )
-    itenerary = journey.itenerary
-    assert_equal 3, itenerary.interactions.count
-  end
-
-  test "when an long journey itenerary is saved 6 interactions are created" do
-    franny = users( :franny )
-    journey = Journey.create( name: "some_journey",
-                              user: franny,
-                              distance: "long" )
-    itenerary = journey.itenerary
-    assert_equal 6, itenerary.interactions.count
-  end
-
 end

@@ -56,7 +56,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "should return all users because all are farther then distance arg" do
-    assert_equal 8, @franny.by_distance(300, :>).count
+    assert_equal 8, @franny.by_distance(150, :>).count
   end
 
   test "should return one random user with arg of array of users" do
@@ -66,10 +66,6 @@ class UserTest < ActiveSupport::TestCase
 
   test "base interaction finds one user to be initiated as the base interaction" do
     assert_equal User, @franny.base_interaction(1500).class
-  end
-
-  test "should two" do
-    assert_equal 2, Shaman.add
   end
 
 end

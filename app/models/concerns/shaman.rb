@@ -27,12 +27,13 @@ module Shaman
 
   class Symposium
 
-    attr_reader :itenerary, :journey, :user
+    attr_reader :itenerary, :journey, :user, :base_user
 
     def initialize(journey, itenerary)
       @journey = journey
       @itenerary = itenerary
       @user = journey.user
+      @base_user = ""
       create_interactions
     end
 
@@ -45,22 +46,24 @@ module Shaman
     end
 
     def short_interaction
-      base = base_interaction 500
+      @base_user = user.base_interaction 200
+      base = create_base_interaction
       #the observer at test/observer.rb
       interaction_observer base, "#SHORT BASE"
       interaction_increment itenerary.interactions.first, 3
     end
 
     def long_interaction
-      base = base_interaction 2000
+      @base_user = user.base_interaction 6000
+      base = create_base_interaction 
       #the observer at test/observer.rb
       interaction_observer base, "#LONG BASE"
       interaction_increment itenerary.interactions.first, 6
     end
 
-    def base_interaction distance
+    def create_base_interaction 
       interaction  = ::Interaction.new(itenerary_id: itenerary.id,
-                                     user_id: user.base_interaction(distance).id)
+                                        user_id:  base_user.id)
       interaction.save
       interaction
     end

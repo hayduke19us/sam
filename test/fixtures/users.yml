@@ -28,8 +28,8 @@ seymore:
   email: seymore@gmail.com
   encrypted_password: seymorebuddy
   current_sign_in_ip: "127.0.0.1"
-  lat: 44.0581728
-  long: -121.3153096
+  lat: 30.267153 
+  long: -97.7430608 
   city: "Austin"
 
 matt:
