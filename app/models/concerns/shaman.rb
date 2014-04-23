@@ -20,15 +20,26 @@ module Shaman
     def create_itenerary
       @itenerary = Itenerary.new(journey_id: self.journey.id)
       if @itenerary.save
-        create_interactions
+        Shaman::Symposium.new(journey, itenerary)
       end
+    end
+  end
+
+  class Symposium
+
+    attr_reader :itenerary, :journey, :user
+
+    def initialize(journey, itenerary)
+      @journey = journey
+      @itenerary = itenerary
+      @user = journey.user
+      create_interactions
     end
 
     def create_interactions
-      case journey.distance
-      when "short"
+      if journey.short?
         short_interaction
-      when "long"
+      elsif journey.long?
         long_interaction
       end
     end
@@ -36,42 +47,22 @@ module Shaman
     def short_interaction
       base = base_interaction 500
       #the observer at test/observer.rb
-      interaction_observer base, "#short base"
+      interaction_observer base, "#SHORT BASE"
       interaction_increment itenerary.interactions.first, 3
-    end
-
-    def base_interaction distance
-      interaction  = Interaction.new(itenerary_id: itenerary.id,
-                                     user_id: user.base_interaction(distance).id)
-      interaction.save
-      interaction
-    end
-
-    def next_interaction distance
-      interaction  = Interaction.new(itenerary_id: self.id,
-                                      user_id: user.next_interaction(distance).id)
-      interaction.save
-      interaction
     end
 
     def long_interaction
       base = base_interaction 2000
       #the observer at test/observer.rb
-      interaction_observer base, "#long base"
+      interaction_observer base, "#LONG BASE"
       interaction_increment itenerary.interactions.first, 6
     end
 
-    def interaction_increment base, num
-      x, y = 0, (num - 1)
-      while x <= y
-        distance = user.distance_to(itenerary.interactions.last.user.geo)
-        unless user.by_distance(distance, :<).empty?
-          interaction = new_interaction(distance)
-          interaction_observer interaction, "#increment"
-        end
-      x += 1
-      y -= 1
-      end
+    def base_interaction distance
+      interaction  = ::Interaction.new(itenerary_id: itenerary.id,
+                                     user_id: user.base_interaction(distance).id)
+      interaction.save
+      interaction
     end
 
     def new_interaction distance
@@ -81,7 +72,21 @@ module Shaman
       interaction
     end
 
-      private
+    def interaction_increment base, num
+      x = 0
+      while x <= 20 && itenerary.interactions.count < num
+        distance = user.distance_to(itenerary.interactions.last.user.geo)
+        unless user.by_distance(distance, :<).empty?
+
+          interaction = new_interaction(distance)
+          interaction_observer interaction, "#increment"
+
+        end
+        x += 1
+      end
+    end
+
+    private
 
       def interaction_observer interaction, note
         path = File.expand_path('../../sam/test/observer.rb', '__FILE__')

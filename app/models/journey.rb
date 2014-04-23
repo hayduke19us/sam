@@ -15,4 +15,12 @@ class Journey < ActiveRecord::Base
     journey.create_itenerary
   end
 
+  def short?
+    self.distance == "short"
+  end
+
+  def long?
+    self.distance == "long"
+  end
+
 end
