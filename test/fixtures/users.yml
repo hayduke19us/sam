@@ -1,11 +1,5 @@
 #Users
 #
-admin:
-  email: hayduke19us@gmail.com
-  password: password
-  password_confirmation: password 
-  lat: 32.7801399
-  long: -96.80045109999999
 
 franny:
   email: franny@gmail.com
