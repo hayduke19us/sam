@@ -1,13 +1,10 @@
+
 ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
-
-require 'simplecov'
-Simplecove.start
 
 require 'coveralls'
 Coveralls.wear!('rails')
 
-require 'simplecov'
 
 require "rails/test_help"
 require "minitest/rails"
