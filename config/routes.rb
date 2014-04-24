@@ -7,6 +7,7 @@ Sam::Application.routes.draw do
   devise_for :guardians, controllers: { registrations: "guardians/registrations" }
 
   resources :profiles
+  resources :journeys
 
   get "users/dashboard"
 

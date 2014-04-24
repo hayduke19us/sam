@@ -6,7 +6,9 @@
     <ul>
       <h2 class="lobster">Dashboard</h2>
       <%= link_to raw( "<li class='dash-knob'>Take a Journey</li>"),
-        "#", class: "white" %>
+        "#", 
+        class: "white",
+        id: "side-bar-link" %>
 
       <% if current_user.profile %>
         <%= link_to raw( "<li class='dash-knob'>Profile</li>"),
@@ -35,7 +37,10 @@
     </ul>
   </div>
   <div class="hide center-text" id="map-controls">
-    <%= link_to "Dashboard", "#", class: "button small", id: "back-dashboard"%>
+    <%= link_to "back to Dashboard", 
+                "#", 
+                class: "button small", 
+                id: "back-dashboard"%>
     <h2 class="lobster">Map Options</h2>
     <div id="map-schemes">
       <%= link_to image_tag("luner_map.png"), 
@@ -73,9 +78,9 @@
 <div id="map-wrapper">
   <div id="map"></div>
 </div>
+<div class="hide" id="modal-back">
+</div>
 <% unless current_user.profile%>
-  <div id="modal-back">
-  </div>
   <div class="show" id="modal">
     <div id="profile-wrapper">
       <div class="row">
@@ -99,6 +104,24 @@
     </div>
   </div>
 <%end%>
+<div class="hide" id="journey-modal">
+  <div id="profile-wrapper">
+    <div class="row">
+      <div class="hide-for-small medium-12
+        medium-centered large-8 large-centered columns">
+          <%= image_tag "big-globe.png", id: "modal-globe" %>
+      </div>
+    </div>
+    <div id="profileBox">
+      <div class="row">
+        <div class="small-8 small-centered medium-6
+          medium-centered large-4 large-centered columns">
+          <%= render "/journeys/journey_form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="map-space">
   <script>
     <%= render @map %>

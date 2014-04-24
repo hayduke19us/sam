@@ -62,7 +62,7 @@ module Shaman
     end
 
     def create_base_interaction
-      interaction  = ::Interaction.new(itenerary_id: itenerary.id,
+      interaction  = Interaction.new(itenerary_id: itenerary.id,
                                         user_id:  base_user.id)
       interaction.save
       interaction

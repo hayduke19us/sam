@@ -1,0 +1,14 @@
+<%= form_tag journeys_path, method: :post do %> 
+  <h1 class= "white lobster">Time to Travel</h1>
+  <h4 class="white">Name your Journey</h4>
+  <%= text_field_tag :name, nil, placeholder: "My first Journey"%>
+  <%= radio_button_tag(:distance, "short")%>
+  <%= label_tag :distance, "short", class: "white"%>
+  <%= radio_button_tag(:distance, "long" )%>
+  <%= label_tag :distance, "long", class: "white" %> </br>
+  <%= submit_tag "Start your Journey", class: "button"%>
+  <%= link_to "I'll do this later",
+              "#",
+              id: "close-modal",
+              class: "button tiny secondary"%>
+<% end %>

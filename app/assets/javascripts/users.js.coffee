@@ -19,6 +19,11 @@ $ ->
   closeModal "#close-modal", "#modal", "#modal-back", "#map-wrapper", "#side-bar"
   openModal "#new-profile", "#modal", "#modal-back", "#map-wrapper", "#side-bar"
 
+  openModal "#side-bar-link","#journey-modal", "#modal-back", "#map-wrapper",
+            "#side-bar"
+  closeModal "#close-modal", "#journey-modal", "#modal-back", "#map-wrapper"
+  
+
   showDiv = (link, div1, div2) ->
     $( document ).on("click", link, ->
       complete = ->
