@@ -1,5 +1,9 @@
 Sam::Application.routes.draw do
   
+  get "itenerary/show"
+  get "itenerary/update"
+  get "itenerary/create"
+  get "itenerary/destroy"
   get "users/map_choice"
   get "welcome/index"
 

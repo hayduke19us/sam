@@ -66,7 +66,7 @@ li {list-style: none;}
 }
 
 #modal-globe {position: absolute;
-              opacity: 0.3;
+              opacity: 0.7;
               margin-top: 5px;
 }
 
@@ -96,7 +96,10 @@ li {list-style: none;}
 
 
 
-#profile-wrapper {margin-top: 5%;}
+#profile-wrapper {margin-top: 5%;
+                  position: relative;
+                  z-index: 1000
+                }
 
 #create-profile {margin-top: 10px;}
 

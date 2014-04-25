@@ -1,2 +1,3 @@
 $("#map-space").html("")
-$("#map-space").append("<script><%= j render partial: @map_choice %></script>")
+$("#map-space").append("<script><%= j render partial: @options_hash[:map_choice],
+                       locals: {hash: @options_hash[:hash]} %></script>")

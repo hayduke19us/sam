@@ -7,22 +7,14 @@ class UsersController < ApplicationController
   def dashboard
     @users = User.all
     unless current_user.journeys.empty?
-      interactions = current_user.interactions_users
-      @hash = Gmaps4rails.build_markers(interactions) do |user, marker|
-        marker.lat user.lat
-        marker.lng user.long
-      end
+      @hash = gmap
     end
     @map = "default_map"
   end
 
   def map_choice
-    unless params[:map_choice]
-      @map_choice = "default_map"
-    else 
-      @map_choice = params[:map_choice]
-    end
-    respond_with @map_choice
+    @options_hash = {map_choice: params[:map_choice], hash: gmap}
+    respond_with @options_hash
   end
 
   def authenticate_users_guardian
@@ -32,6 +24,19 @@ class UsersController < ApplicationController
       sign_out current_guardian
       redirect_to new_guardian_session_path
     end
+  end
+
+private
+
+  def gmap
+    unless current_user.journeys.empty?
+      interactions = current_user.interactions_users
+      hash = Gmaps4rails.build_markers(interactions) do |user, marker|
+        marker.lat user.lat
+        marker.lng user.long
+      end
+    end
+    hash
   end
 
 end
