@@ -4,6 +4,7 @@ gem "devise"
 gem "geocoder"
 gem "foundation-rails"
 gem "gmaps4rails"
+gem 'coveralls', require: false
 
 group :development do
   gem "better_errors"
