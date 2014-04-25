@@ -1,0 +1,59 @@
+admin: 
+  email: hayduke19us@gmail.com
+  password: password
+  lat:  32.7801399
+  long: -96.8004510
+
+franny:
+  email: franny@gmail.com
+  password: 123franny
+  lat:  32.7801399
+  long: -96.8004510
+
+zoey:
+  email: zoey@gmail.com
+  password: 123zoey
+  lat:  47.6062095
+  long: -122.3320708
+
+buddy:
+  email: buddy@gmail.com
+  password: 123buddy
+  lat: 48.856614
+  long: 2.3522219
+
+seymore:
+  email: seymore@gmail.com
+  password: seymorebuddy
+  lat: 30.267153 
+  long: -97.7430608 
+
+matthew:
+  email: matthew@gmail.com
+  password: 123matthew
+  lat: 53.88980000000001
+  long: -166.5422
+
+joshua:
+  email: josuah@gmail.com
+  password: 123joshua
+  lat: 51.508515
+  long: -0.1254872
+
+sarah:
+  email: sarah@gmail.com
+  password: 123sarah
+  lat: 32.0852999
+  long: 34.78176759999999
+
+martin:
+  email: martin@gmail.com
+  password: 123martin
+  lat: 37.7749295
+  long: -122.4194155
+
+fraklin:
+  email: franklin@gmail.com
+  password: 123franklin
+  lat: 53.88980000000001
+  long: -166.5422
