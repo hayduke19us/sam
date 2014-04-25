@@ -4,7 +4,8 @@ class JourneysController < ApplicationController
                              distance: params[:distance],
                              user_id: current_user.id)
     if journey.save
-      redirect_to root_path
+      itenerary = journey.itenerary
+      redirect_to itenerary_path(itenerary) 
     end
   end
 

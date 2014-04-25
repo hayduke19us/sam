@@ -1,9 +1,5 @@
 Sam::Application.routes.draw do
   
-  get "itenerary/show"
-  get "itenerary/update"
-  get "itenerary/create"
-  get "itenerary/destroy"
   get "users/map_choice"
   get "welcome/index"
 
@@ -12,6 +8,7 @@ Sam::Application.routes.draw do
 
   resources :profiles
   resources :journeys
+  resources :itenerarys
 
   get "users/dashboard"
 
