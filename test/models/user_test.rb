@@ -72,4 +72,16 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 1, @franny.last_interactions.count
   end
 
+  test "return a collection of all user's iteneraries" do
+    assert_equal 1, @franny.iteneraries.count
+  end
+
+  test "return a collection of all user's interactions" do
+    assert_equal 1, @franny.interactions.count
+  end
+
+  test "return a collection of all user's interactions users" do
+    assert_equal 1, @franny.interactions_users.count
+  end
+
 end

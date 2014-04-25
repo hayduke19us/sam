@@ -87,4 +87,28 @@ class User < ActiveRecord::Base
     User.random(self.by_distance(distance, :<))
   end
 
+  def iteneraries
+    array = []
+    self.journeys.each do |journ|
+      array << journ.itenerary
+    end
+    array
+  end
+
+  def interactions 
+    array = []
+    self.iteneraries.each do |iten|
+      array << iten.interactions
+    end
+    array.flatten
+  end
+
+  def interactions_users
+    array = []
+    self.interactions.each do |inter|
+      array << inter.user
+    end
+    array
+  end
+
 end
