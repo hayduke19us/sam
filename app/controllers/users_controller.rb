@@ -6,9 +6,13 @@ class UsersController < ApplicationController
 
   def dashboard
     @users = User.all
-    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-      marker.lat user.lat
-      marker.lng user.long
+    @interactions = @users
+    unless current_user.journeys.empty?
+      @interactions = current_user.last_interactions
+    end
+    @hash = Gmaps4rails.build_markers(@interactions) do |interaction, marker|
+      marker.lat interaction.user.lat
+      marker.lng interaction.user.long
     end
     @map = "default_map"
   end

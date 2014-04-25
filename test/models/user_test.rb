@@ -68,4 +68,8 @@ class UserTest < ActiveSupport::TestCase
     assert_equal User, @franny.base_interaction(1500).class
   end
 
+  test "return a collection of user's last journey interactions were created" do
+    assert_equal 1, @franny.last_interactions.count
+  end
+
 end

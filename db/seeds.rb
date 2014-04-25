@@ -7,10 +7,13 @@ puts
 puts %{ The Admins login:
         email: hayduke19us@gmail.com
         password: password}
+
+puts "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+
 def seed_guardian(email, password, user_id)
-  Guardian.create(email: email + "guard",
-                  password: password + "guard",
-                  password_confirmation: password + "guard",
+  Guardian.create(email: email,
+                  password: password,
+                  password_confirmation: password,
                   user_id: user_id
                  )
 end
@@ -25,6 +28,7 @@ def seed_user(email, password, lat, long)
 end
 
 seed_user("hayduke19us@gmail.com", "password", 32.7801399, -96.80045109999999)
+
 seed_user("zoey@gmail.com", "frannypass", 47.6062095, -122.3320708)
 
 seed_user("franny@gmail.com", "zoeypass", 32.7801399, -96.8004510)

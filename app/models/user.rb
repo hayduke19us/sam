@@ -42,6 +42,12 @@ class User < ActiveRecord::Base
     self.profile.religion
   end
 
+  def last_interactions 
+    journey = self.journeys.last
+    itenerary = journey.itenerary
+    itenerary.interactions
+  end
+
   #returns distance from city, or lat and long to current_user
   #I'm seperating this geocode function in case a better option 
   #exist
