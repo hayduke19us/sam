@@ -1,2 +1,18 @@
-<h1>Itenerary#show</h1>
-<%= @itenerary.journey.name%>
+<div class = "dark-banner">
+  <div class="row">
+    <div class="small-12 large-12 columns">
+      <div id="title-wrapper">
+        <h1 class="lobster white center-text"><%= @journey.name%>'s Itenerary</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 large-centered large-6 columns">
+      <% @destinations.each do |city|%>
+        <%= link_to raw("<div class = 'dash-knob white center-text'> 
+                        #{city}</div>"), '#' %>
+      <% end %>
+    </div>
+  </div>
+</div>
