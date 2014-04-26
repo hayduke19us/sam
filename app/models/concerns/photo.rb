@@ -20,16 +20,16 @@ module Photo
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
     end
 
-    def search_url city, amount=10, format="json"
-      "/?method=flickr.photos.search&api_key=#{API}&tags=#{city}&safe_search=1&per_page=#{amount}&page=1&format=#{format}&nojsoncallback=1"
+    def search_url city, amount, format, page
+      "/?method=flickr.photos.search&api_key=#{API}&tags=#{city}&safe_search=1&per_page=#{amount}&page=#{page}&format=#{format}&nojsoncallback=1"
     end
 
     def uri_parse url
       URI.parse(url)
     end
 
-    def search city, amount=20, format="json"
-      uri = uri_parse("#{self.base_uri}#{search_url(city, amount, format)}") 
+    def search city, amount=10, format="json", page=rand(10) 
+      uri = uri_parse("#{self.base_uri}#{search_url(city, amount, format, page)}") 
       http = Net::HTTP.new(uri.host, uri.port)  
       https_setup(http)
       request = Net::HTTP::Get.new(uri.request_uri)

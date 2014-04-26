@@ -112,7 +112,7 @@ class User < ActiveRecord::Base
   end
 
   def distance_to_increment city1, city2
-    Geocoder::Calculations.distance_between city1, city2
+    Geocoder::Calculations.distance_between(city1, city2).round
   end
 
   #the hash key is the city. The key signifies the city x in the 
@@ -126,7 +126,7 @@ class User < ActiveRecord::Base
     count = d.count
     x, y = 0, 1
     while y < count
-      hash["#{d[x]}"] = self.distance_to_increment d[x], d[y]
+      hash["#{d[x]}"] = self.distance_to_increment(d[x], d[y]).to_s + " miles"
       x += 1
       y += 1
     end

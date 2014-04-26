@@ -1,7 +1,26 @@
 @import 'global';
 
-#title-wrapper {padding: 30px;}
 
 #destination-wrapper {padding: 30px;}
 
 #journey-summary {font-size: 20px;}
+
+#miles {padding: 10px;}
+
+#photo-wall {height: 100%;
+             width: 200px;
+             background-color: darken($background-blue, 20);
+             float: right;
+             position: relative;
+             overflow-y: scroll;
+             padding: 10px;
+}
+
+#outer-wrapper {height: 400px;
+                width: 100%;
+                overflow-x: scroll;
+}
+
+#photos-wrapper {height: 1000px;;
+                 width: 100%; 
+}

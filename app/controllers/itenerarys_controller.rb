@@ -1,5 +1,7 @@
 class ItenerarysController < ApplicationController
+  
   def show
+    user = current_user
     @itenerary = Itenerary.find(params[:id])
     @journey = @itenerary.journey
     interactions = @itenerary.interactions
@@ -8,9 +10,18 @@ class ItenerarysController < ApplicationController
       array << inter.user
     end
     @destinations = array.map {|user| user.city }
+    @city = city
     @photos = @itenerary.interaction_photos
-    @distance = current_user.city_distance @destinations
+    @base = user.distance_to_increment(user.city, @destinations.first)
+    @distance = user.city_distance @destinations
+  end
 
+  def city
+    unless params[:city]
+      @city = @destinations.first
+    else
+      @city = params[:city]
+    end
   end
 
   def update
