@@ -6,17 +6,23 @@
         <h1 class="lobster white center-text"><%= @journey.name%>'s Itenerary</h1>
       </div>
     </div>
+    <div class="small-centered small-6 large-12 columns">
+        <%= link_to "Start Journey", "#", class: "button success"%>
+    </div>
   </div>
 
   <div class="row">
-    <div class="small-12 large-centered large-6 columns">
+    <div class="small-12 large-4 columns">
       <% @destinations.each do |city|%>
         <%= link_to raw("<div class = 'dash-knob white center-text'> 
                         #{city}</div>"), '#' %>
+        <span><%= current_user.distance_to_increment(city, )%></span>
+      <% end %>
+    </div>
+    <div class="hide-for-small large-8 columns">
+      <% @photos[@destinations.first].each do |photo|%>
+        <%= image_tag photo, class: "city-img-th th"%>
       <% end %>
     </div>
   </div>
-  <% @photos[@destinations.first].each do |photo| %>
-    <%= image_tag photo %>
-  <% end %>
 </div>

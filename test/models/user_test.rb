@@ -84,4 +84,8 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 1, @franny.interactions_users.count
   end
 
+  test "city_distance should return a hash of distances between each city" do
+    assert_equal 2, @franny.city_distance(["seattle", "paris", "austin"]).count
+  end
+
 end

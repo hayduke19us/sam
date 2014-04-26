@@ -111,4 +111,26 @@ class User < ActiveRecord::Base
     array
   end
 
+  def distance_to_increment city1, city2
+    Geocoder::Calculations.distance_between city1, city2
+  end
+
+  #the hash key is the city. The key signifies the city x in the 
+  #equation x to y in miles. It makesit easier this way to access the distances
+  #by hash in the view @distance[city] because the distances will be under each 
+  #city in the Itenerary show view
+
+  def city_distance destinations
+    d = destinations
+    hash = {}
+    count = d.count
+    x, y = 0, 1
+    while y < count
+      hash["#{d[x]}"] = self.distance_to_increment d[x], d[y]
+      x += 1
+      y += 1
+    end
+    hash
+  end
+
 end

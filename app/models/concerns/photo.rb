@@ -28,7 +28,7 @@ module Photo
       URI.parse(url)
     end
 
-    def search city, amount=10, format="json"
+    def search city, amount=20, format="json"
       uri = uri_parse("#{self.base_uri}#{search_url(city, amount, format)}") 
       http = Net::HTTP.new(uri.host, uri.port)  
       https_setup(http)

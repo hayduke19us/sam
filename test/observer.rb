@@ -1371,3 +1371,18 @@ Interaction: 262832080
 User => martin@gmail.com
 Distance From: 1480.609819416463
 ------------------------------------------------------------
+#SHORT BASE
+Interaction: 262832081
+User => sarah@gmail.com
+Distance From: 6955.748521154502
+------------------------------------------------------------
+#increment
+Interaction: 262832082
+User => franklin@gmail.com
+Distance From: 3626.37311075222
+------------------------------------------------------------
+#increment
+Interaction: 262832083
+User => martin@gmail.com
+Distance From: 1480.609819416463
+------------------------------------------------------------

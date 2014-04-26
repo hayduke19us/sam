@@ -9,6 +9,7 @@ class ItenerarysController < ApplicationController
     end
     @destinations = array.map {|user| user.city }
     @photos = @itenerary.interaction_photos
+    @distance = current_user.city_distance @destinations
 
   end
 
@@ -20,4 +21,5 @@ class ItenerarysController < ApplicationController
 
   def destroy
   end
+
 end
