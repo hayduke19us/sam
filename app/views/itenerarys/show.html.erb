@@ -16,5 +16,7 @@
       <% end %>
     </div>
   </div>
+  <% @photos[@destinations.first].each do |photo| %>
+    <%= image_tag photo %>
+  <% end %>
 </div>
-<%=  @photos.first %>
