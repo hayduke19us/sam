@@ -40,27 +40,31 @@ class IteneraryTest < ActiveSupport::TestCase
   end
 
   test "Flickr::Search has accesible attributes" do
-    search = Photo::Search.new "seattle", "austin"
+    search = Photo::Search.new ["seattle", "austin"]
     assert 2, search.cities_array.count
     assert search.flickr
   end
 
   test "::Search returns a hash of cities and results" do
-    search  = Photo::Search.new "seattle", "austin"
+    search  = Photo::Search.new ["seattle", "austin"]
     repo = search.flickr_repo
     assert_equal Hash, repo.class 
     assert_equal 2, repo.count 
   end
 
   test "::Search image_urls return hash of city and href urls for the values" do
-    search  = Photo::Search.new "seattle", "austin"
+    search  = Photo::Search.new ["seattle", "austin"]
     urls = search.image_urls
     assert_equal 2, urls.count
     assert_equal 10, urls["seattle"].count
   end
 
   test "iteneraries has access to photo search return hash of photos by city" do
-    assert_equal 2, @itenerary.photos("seattle", "austin").count
+    assert_equal 2, @itenerary.photos(["seattle", "San Francisco"]).count
+  end
+
+  test "interaction photos returns collection of photos per interaction city" do
+    assert_equal 1, @itenerary.interaction_photos.count
   end
 
 

@@ -8,6 +8,7 @@ class ItenerarysController < ApplicationController
       array << inter.user
     end
     @destinations = array.map {|user| user.city }
+    @photos = @itenerary.interaction_photos
 
   end
 

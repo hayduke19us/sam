@@ -7,6 +7,7 @@ module Photo
   extend ActiveSupport::Concern
 
   class Flickr 
+    API = "59a3d0192d16da2a2d739d0c9d25fdf4"
 
     attr_reader :base_uri, :http
 
@@ -20,7 +21,7 @@ module Photo
     end
 
     def search_url city, amount=10, format="json"
-      "/?method=flickr.photos.search&api_key=#{ENV['flickr_api_key']}&tags=#{city}&safe_search=1&per_page=#{amount}&page=1&format=#{format}&nojsoncallback=1"
+      "/?method=flickr.photos.search&api_key=#{API}&tags=#{city}&safe_search=1&per_page=#{amount}&page=1&format=#{format}&nojsoncallback=1"
     end
 
     def uri_parse url
@@ -44,13 +45,13 @@ module Photo
 
     attr_reader :cities_array, :flickr
 
-    def initialize *args
-      @cities_array = args 
+    def initialize cities
+      @cities_array = cities 
       @flickr = Flickr.new
     end
 
     def flickr_repo 
-      Hash[self.cities_array.map {|city| [city, flickr.search(city)]}]
+      Hash[self.cities_array.map {|city| [city, flickr.search(city.delete(" "))]}]
     end
 
     def get_urls array
