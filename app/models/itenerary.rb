@@ -29,4 +29,9 @@ class Itenerary < ActiveRecord::Base
     array
   end
 
+  def photos *cities
+    search = Photo::Search.new(*cities)
+    search.image_urls
+  end
+
 end

@@ -59,5 +59,9 @@ class IteneraryTest < ActiveSupport::TestCase
     assert_equal 10, urls["seattle"].count
   end
 
+  test "iteneraries has access to photo search return hash of photos by city" do
+    assert_equal 2, @itenerary.photos("seattle", "austin").count
+  end
+
 
 end
