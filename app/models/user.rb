@@ -126,7 +126,7 @@ class User < ActiveRecord::Base
     count = d.count
     x, y = 0, 1
     while y < count
-      hash["#{d[x]}"] = self.distance_to_increment(d[x], d[y]).to_s + " miles"
+      hash["#{d[x]}"] = self.distance_to_increment(d[x], d[y]) 
       x += 1
       y += 1
     end

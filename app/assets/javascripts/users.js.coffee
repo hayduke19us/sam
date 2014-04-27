@@ -4,7 +4,7 @@ $ ->
       $(modal).fadeOut()
       $(option).fadeOut() if option
       $(option2).fadeIn() if option2
-      $(option3).fadeIn() if option2
+      $(option3).fadeIn() if option3
       false
     )
   openModal = (link, modal, option=null, option2=null, option3=null) ->
@@ -12,7 +12,7 @@ $ ->
       $(modal).fadeIn()
       $(option).fadeIn() if option
       $(option2).fadeOut() if option2
-      $(option3).fadeOut() if option2
+      $(option3).fadeOut() if optioni3
       false
     )
 
@@ -22,6 +22,8 @@ $ ->
   openModal "#side-bar-link","#journey-modal", "#modal-back", "#map-wrapper",
             "#side-bar"
   closeModal "#close-modal", "#journey-modal", "#modal-back", "#map-wrapper"
+
+
   
 
   showDiv = (link, div1, div2) ->

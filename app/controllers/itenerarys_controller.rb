@@ -14,6 +14,7 @@ class ItenerarysController < ApplicationController
     @photos = @itenerary.interaction_photos
     @base = user.distance_to_increment(user.city, @destinations.first)
     @distance = user.city_distance @destinations
+    @total_distance = total_distance 
   end
 
   def city
@@ -22,6 +23,12 @@ class ItenerarysController < ApplicationController
     else
       @city = params[:city]
     end
+  end
+
+  def total_distance 
+    distance = 0
+    @distance.each {|k, v| distance += v } 
+    distance + @base
   end
 
   def update
