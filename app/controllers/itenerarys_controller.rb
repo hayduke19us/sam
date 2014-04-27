@@ -1,4 +1,6 @@
 class ItenerarysController < ApplicationController
+
+  respond_to :js, :html
   
   def show
     user = current_user
@@ -15,6 +17,13 @@ class ItenerarysController < ApplicationController
     @base = user.distance_to_increment(user.city, @destinations.first)
     @distance = user.city_distance @destinations
     @total_distance = total_distance 
+  end
+
+  def choose_city
+    @itenerary = Itenerary.find(params[:id])
+    @photos = @itenerary.interaction_photos
+    @respond = {photos: @photos, city: params[:city]}
+    respond_with @respond
   end
 
   def city

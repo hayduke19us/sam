@@ -1,5 +1,5 @@
 Sam::Application.routes.draw do
-  
+  get "itenerarys/choose_city"  
   get "users/map_choice"
   get "welcome/index"
 

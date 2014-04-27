@@ -1,10 +1,6 @@
 <div class = "dark-banner">
   <div id="photo-wall">
-     <div id="photos-wrapper">
-       <% @photos[@city].each do |photo|%>
-         <%= image_tag photo, class: "city-img-th th", id: "city-image"%>
-       <% end %>
-     </div>
+    <%= render partial: "photo_wall", locals: {photos: @photos, city: @city}%>
   </div>
   <div id="trip-details">
     <%= link_to "Map", "#", class: "button small center-text"%>
@@ -29,7 +25,8 @@
       </div>
       <% @destinations.each do |city|%>
         <%= link_to  raw("<div class='dash-knob white center-text'>#{city}</div>"),
-                         itenerary_path(@itenerary, city: city) %>
+          itenerarys_choose_city_path(city: city, id: @itenerary.id),
+          remote: true %>
         <% unless city == @destinations.last%>
           <div class="center-text" id= "miles-circle">
             <span id="miles"><%= @distance[city]%> m.</span>
@@ -57,7 +54,11 @@
             <% @destinations.each do |city| %>
              <ul>
                <li class="white", id: "image-description">
-                 <%= link_to city, itenerary_path(@itenerary, city: city) %>
+                 <%= link_to  raw("<div class='dash-knob white center-text'>
+                                  #{city}</div>"),
+                                   itenerarys_choose_city_path(city: city,
+                                   id: @itenerary.id), 
+                                   remote: true %>
                </li> 
              </ul>
            <% end %>
