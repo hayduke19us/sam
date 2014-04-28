@@ -88,4 +88,12 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 2, @franny.city_distance(["seattle", "paris", "austin"]).count
   end
 
+  test "distance_to_increment should return the geocoded distance between cities" do
+    assert_equal 1, @franny.distance_to_increment("dallas", "seattle")
+  end
+
+  test "journey_interactions_hash returns a hash as journey => interactions" do
+    assert_equal 1, @franny.journey_interactions_hash
+  end
+
 end

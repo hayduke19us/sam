@@ -49,6 +49,10 @@ class JourneyTest < ActiveSupport::TestCase
     assert journey.itenerary
   end
 
+  test "interactions will return an array of interactions" do
+    assert_equal 1, @franny_journey.interactions.count
+  end
+
   def create_a_journey distance
     franny = users(:franny) 
     Journey.new name: "first_trip", distance: distance, user: franny

@@ -12,10 +12,16 @@ class UsersController < ApplicationController
     @map = "default_map"
   end
 
+  def history
+    @journeys = current_user.journeys
+  end
+
   def map_choice
     @options_hash = {map_choice: params[:map_choice], hash: gmap}
     respond_with @options_hash
   end
+
+private
 
   def authenticate_users_guardian
     if current_user.guardian == current_guardian
@@ -26,7 +32,6 @@ class UsersController < ApplicationController
     end
   end
 
-private
 
   def gmap
     unless current_user.journeys.empty?

@@ -1461,3 +1461,93 @@ Interaction: 262832098
 User => martin@gmail.com
 Distance From: 1480.609819416463
 ------------------------------------------------------------
+#SHORT BASE
+Interaction: 262832099
+User => josuah@gmail.com
+Distance From: 4748.023234639323
+------------------------------------------------------------
+#increment
+Interaction: 262832100
+User => matthew@gmail.com
+Distance From: 3626.37311075222
+------------------------------------------------------------
+#increment
+Interaction: 262832101
+User => martin@gmail.com
+Distance From: 1480.609819416463
+------------------------------------------------------------
+#SHORT BASE
+Interaction: 262832102
+User => franklin@gmail.com
+Distance From: 3626.37311075222
+------------------------------------------------------------
+#increment
+Interaction: 262832103
+User => martin@gmail.com
+Distance From: 1480.609819416463
+------------------------------------------------------------
+#LONG BASE
+Interaction: 262832104
+User => sarah@gmail.com
+Distance From: 6955.748521154502
+------------------------------------------------------------
+#increment
+Interaction: 262832105
+User => matthew@gmail.com
+Distance From: 3626.37311075222
+------------------------------------------------------------
+#increment
+Interaction: 262832106
+User => martin@gmail.com
+Distance From: 1480.609819416463
+------------------------------------------------------------
+#SHORT BASE
+Interaction: 262832107
+User => martin@gmail.com
+Distance From: 1480.609819416463
+------------------------------------------------------------
+#LONG BASE
+Interaction: 262832028
+User => sarah@gmail.com
+Distance From: 6955.748521154502
+------------------------------------------------------------
+#increment
+Interaction: 262832029
+User => josh@gmail.com
+Distance From: 4748.023234639323
+------------------------------------------------------------
+#increment
+Interaction: 262832030
+User => zoey@gmail.com
+Distance From: 1679.4585602167692
+------------------------------------------------------------
+#increment
+Interaction: 262832031
+User => martin@gmail.com
+Distance From: 1480.609819416463
+------------------------------------------------------------
+#SHORT BASE
+Interaction: 262832032
+User => zoey@gmail.com
+Distance From: 1679.4585602167692
+------------------------------------------------------------
+#increment
+Interaction: 262832033
+User => martin@gmail.com
+Distance From: 1480.609819416463
+------------------------------------------------------------
+#LONG BASE
+Interaction: 262832108
+User => sarah@gmail.com
+Distance From: 6955.748521154502
+------------------------------------------------------------
+#increment
+Interaction: 262832109
+User => matthew@gmail.com
+Distance From: 3626.37311075222
+------------------------------------------------------------
+#increment
+Interaction: 262832110
+User => martin@gmail.com
+Distance From: 1480.609819416463
+------------------------------------------------------------

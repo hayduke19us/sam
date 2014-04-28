@@ -4,6 +4,8 @@
 
 @import 'global';
 
+.dark-banner-auto {background-color: $background-blue;}
+
 .auto {height: auto;}
 
 li {list-style: none;}
@@ -165,4 +167,6 @@ li {list-style: none;}
 
 .th:hover {opacity: 0.7;}
 
-
+#interaction-count { padding-left: 10px;
+                     float: right;
+}

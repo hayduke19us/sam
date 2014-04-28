@@ -23,4 +23,8 @@ class Journey < ActiveRecord::Base
     self.distance == "long"
   end
 
+  def interactions
+    self.itenerary.interactions
+  end
+
 end

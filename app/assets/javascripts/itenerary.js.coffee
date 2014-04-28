@@ -5,3 +5,4 @@ $( document ).on("click", "#city-image", ->
   false
 )
 
+

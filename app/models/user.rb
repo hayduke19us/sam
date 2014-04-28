@@ -133,4 +133,12 @@ class User < ActiveRecord::Base
     hash
   end
 
+  def journey_interactions_hash
+    hash = {}
+    self.journeys.each do |journ|
+      hash[journ.name] = journ.interactions
+    end
+    hash
+  end
+
 end

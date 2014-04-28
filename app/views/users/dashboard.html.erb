@@ -29,7 +29,7 @@
         "#", class: "white" %>
 
       <%= link_to raw( "<li class='dash-knob'>History</li>"),
-        "#", class: "white" %>
+        users_history_path, class: "white" %>
 
       <%= link_to raw( "<li class='dash-knob'>Log Out</li>"),
         destroy_user_session_path, method: "delete", 

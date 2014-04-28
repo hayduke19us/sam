@@ -1,12 +1,12 @@
 <div class = "dark-banner">
-  <div id="photo-wall">
+  <div id="photo-wall" >
     <%= render partial: "photo_wall", locals: {photos: @photos, city: @city}%>
   </div>
-  <div id="trip-details">
+  <div id="trip-details" class="large-4 colums">
     <%= link_to "Map", "#", class: "button small center-text"%>
-    <h2 id="trip-details-title" class="lobster center-text">Trip Details<h2>
-    <h4 class="center-text">Total Distance: <%= @total_distance%> m.</h4>
-    <h4 class="center-text">Destinations: <%= @destinations.count%></h4>
+    <h2 id="trip-details-title" class="lobster">Trip Details<h2>
+    <h4 >Total Distance: <%= @total_distance%> m.</h4>
+    <h4 >Destinations: <%= @destinations.count%></h4>
     <%= link_to "Start Journey", "#", class: "button success", id: "go"%>
   </div>
 
@@ -14,9 +14,9 @@
   <%= link_to "Dashboard", users_dashboard_path, class: "button" %>
 
   <div class="row auto">
-    <div class="small-12 large-6 columns">
-      <h1 class="lobster white"><%= @itenerary.journey.name.titleize%>'s 
-        Itenerary</h1>
+    <div class="small-12 medium-6 large-6 columns">
+      <h2 class="lobster white"><%= @itenerary.journey.name.titleize%>'s 
+        Itenerary</h2>
       <div class='dash-knob white center-text'>
         <%= current_user.city %>
       </div>
@@ -37,20 +37,15 @@
   </div>
   <!-- modal for images --!>
   <div class="hide" id="image-modal">
-    <div id="modal-back"></div>
+    <div id="modal-back-img"></div>
     <div id="profile-wrapper">
-      <div class="row">
-        <div class="hide-for-small medium-12
-          medium-centered large-8 large-centered columns">
-            <%= image_tag "big-globe.png", id: "modal-globe" %>
-        </div>
-      </div>
+     <h1 class="white"><%= link_to "Close", "#",class: "button sm" %></h1>
       <div id="profileBox">
         <div class="row">
-          <div class="large-6 columns">
+          <div class="small-12 medium-12 large-6 columns">
               <img id = "full-image" src = "" >
           </div>
-          <div class="large-6 columns">
+          <div class="small-4 medium-4large-6 columns">
             <% @destinations.each do |city| %>
              <ul>
                <li class="white", id: "image-description">
