@@ -8,15 +8,6 @@
   <%= link_to "For Parents", "#", class: "button", id: "for-parents-link" %>
   <%= link_to "Dashboard", users_dashboard_path, class: "button" %>
 
-  <div id="trip-details">
-    <div id="circle-content">
-      <h2 id="trip-details-title" class="lobster">Trip Details<h2>
-      <h4 >Total Distance: <%= @total_distance%> m.</h4>
-      <h4 >Destinations: <%= @destinations.count%></h4>
-      <%= link_to "Start Journey", "#", class: "button success", id: "go"%>
-    </div>
-  </div>
-
   <div class="row">
     <div class="small-7 medium-6 large-centered large-6 columns">
       <h2 class="lobster white"><%= @itenerary.journey.name.titleize%>'s 
@@ -67,6 +58,16 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="white-banner white-banner">
+  <div id="trip-details" class="center-text">
+    <div id="circle-content">
+      <h2 id="trip-details-title" class="lobster">Trip Details<h2>
+      <h4 >Total Distance: <%= @total_distance%> m.</h4>
+      <h4 >Destinations: <%= @destinations.count%></h4>
+      <%= link_to "Start Journey", "#", class: "button success", id: "go"%>
     </div>
   </div>
 </div>
