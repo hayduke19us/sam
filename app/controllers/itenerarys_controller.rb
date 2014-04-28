@@ -14,9 +14,9 @@ class ItenerarysController < ApplicationController
     @destinations = array.map {|user| user.city }
     @city = city
     @photos = @itenerary.interaction_photos
-    @base = user.distance_to_increment(user.city, @destinations.first)
-    @distance = user.city_distance @destinations
-    @total_distance = total_distance 
+    @base ||= user.distance_to_increment(user.city, @destinations.first)
+    @distance ||= user.city_distance @destinations
+    @total_distance = total_distance
   end
 
   def choose_city

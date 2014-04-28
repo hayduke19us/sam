@@ -4,7 +4,9 @@
 
 @import 'global';
 
-.dark-banner-auto {background-color: $background-blue;}
+.dark-banner-auto {background-color: $background-blue;
+                   height: auto;
+}
 
 .auto {height: auto;}
 
