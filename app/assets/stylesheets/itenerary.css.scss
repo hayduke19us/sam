@@ -75,9 +75,14 @@
                  left: 0px;
                  right: 0px;
                  -webkit-filter: brightness(.1);
-                 opacity: 0.9;
                  z-index: 1000;
 }
+
+#full-image {background-color: #efefef;
+             padding: 10px;
+}
+
+#img-modal-nav {float: left;}
 
 #image-modal {background-color: transparent;
               z-index: 1000;
@@ -89,3 +94,4 @@
               overflow-y: scroll;
 }
 
+#city-title {margin-right: 20%;}

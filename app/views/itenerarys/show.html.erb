@@ -35,32 +35,34 @@
   <div class="hide" id="image-modal">
     <div id="modal-back-img"></div>
     <div id="profile-wrapper">
-     <h1 class="white"><%= link_to "Close", "#", class: "button sm", 
-       id: "close-image-modal" %></h1>
+      <li><h1 id="city-title" class="lobster right"></h1></li>
+      <div id="img-modal-nav">
+        <%= link_to "X", "#", class: "button tiny", 
+           id: "close-image-modal" %>
+        <ul>
+          <% @destinations.each do |city| %>
+             <li class="white", id: "image-description">
+               <%= link_to city, itenerarys_choose_city_path(city: city,
+                                 id: @itenerary.id), 
+                                 remote: true,
+                                 class: "city-list",
+                                 id: city %>
+             </li> 
+          <% end %>
+         </ul>
+      </div>
       <div id="profileBox">
         <div class="row">
-          <div class="small-12 medium-12 large-6 columns">
-              <img class = "hide" id = "full-image" src = "" >
-          </div>
-          <div class="small-4 medium-4large-6 columns">
-            <% @destinations.each do |city| %>
-             <ul>
-               <li class="white", id: "image-description">
-                 <%= link_to  raw("<div class='dash-knob white center-text'>
-                                  #{city}</div>"),
-                                   itenerarys_choose_city_path(city: city,
-                                   id: @itenerary.id), 
-                                   remote: true %>
-               </li> 
-             </ul>
-           <% end %>
+          <div class="small-10 medium-centered 
+               medium-6 large-centered large-6 columns">
+            <img class = "hide" id = "full-image" src = "" >
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="white-banner neg-bt-margin">
+<div id="trip" class="white-banner neg-bt-margin">
   <div id="trip-details" class="center-text">
     <div id="circle-content">
       <h2 id="trip-details-title" class="lobster">Trip Details<h2>
