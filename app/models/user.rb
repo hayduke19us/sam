@@ -112,7 +112,11 @@ class User < ActiveRecord::Base
   end
 
   def distance_to_increment city1, city2
-    Geocoder::Calculations.distance_between(city1, city2).round
+    unless $redis.get("#{city1}_#{city2}")
+      distance = Geocoder::Calculations.distance_between(city1, city2).round
+      $redis.set("#{city1}_#{city2}", distance)
+    end
+    $redis.get("#{city1}_#{city2}").to_i
   end
 
   #the hash key is the city. The key signifies the city x in the 

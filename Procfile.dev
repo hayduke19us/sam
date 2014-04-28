@@ -1,1 +1,4 @@
+
 postgresql: postgres -D vendor/postgresql
+
+redis: redis-server 

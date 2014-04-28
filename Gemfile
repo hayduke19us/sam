@@ -6,6 +6,7 @@ gem "foundation-rails"
 gem "gmaps4rails"
 gem 'coveralls', require: false
 gem 'figaro'
+gem 'redis'
 
 group :development do
   gem "better_errors"

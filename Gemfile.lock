@@ -131,6 +131,7 @@ GEM
     rake (10.3.1)
     rdoc (4.1.1)
       json (~> 1.4)
+    redis (3.0.7)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rubyzip (1.1.2)
@@ -204,6 +205,7 @@ DEPENDENCIES
   minitest-rails-capybara
   pg
   rails (= 4.0.2)
+  redis
   sass-rails (~> 4.0.0)
   sdoc
   selenium-webdriver
