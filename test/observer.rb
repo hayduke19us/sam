@@ -1701,3 +1701,18 @@ Interaction: 262832133
 User => martin@gmail.com
 Distance From: 1480.609819416463
 ------------------------------------------------------------
+#SHORT BASE
+Interaction: 262832134
+User => buddy@gmail.com
+Distance From: 4930.036418736824
+------------------------------------------------------------
+#increment
+Interaction: 262832135
+User => matthew@gmail.com
+Distance From: 3626.37311075222
+------------------------------------------------------------
+#increment
+Interaction: 262832136
+User => martin@gmail.com
+Distance From: 1480.609819416463
+------------------------------------------------------------
