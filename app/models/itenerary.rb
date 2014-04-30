@@ -4,7 +4,7 @@ class Itenerary < ActiveRecord::Base
 
   belongs_to :journey
   has_many :interactions
-  has_many :users, through: :interactions
+  has_many :users, through: :interactions, dependent: :destroy
 
   validates :journey_id, presence: true
 

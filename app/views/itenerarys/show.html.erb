@@ -35,7 +35,9 @@
           <h6 class="white">Destinations: <%= @destinations.count%></h6>
           <%= link_to "Start Journey", "#", 
             class: "button small success", id: "go"%>
-          <%= link_to "Cancel", "#", class: "small button alert", id: "go"%>
+          <%= link_to "Cancel", journey_path(@journey),
+            method: :delete,
+            class: "small button alert", id: "go"%>
         </div>
         <div class="show" id="city-list">
           <div class='dash-knob white center-text'>

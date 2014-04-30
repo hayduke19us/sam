@@ -10,5 +10,8 @@ class JourneysController < ApplicationController
   end
 
   def destroy
+    journey = Journey.find(params[:id])
+    journey.destroy
+    redirect_to users_dashboard_path
   end
 end

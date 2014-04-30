@@ -65,6 +65,9 @@ class ItenerarysController < ApplicationController
   end
 
   def destroy
+    itenerary = Itenerary.find(params[:id])
+    itenerary.destroy
+    redirect_to users_dashboard_path
   end
 
 end

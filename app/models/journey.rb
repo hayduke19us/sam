@@ -3,7 +3,7 @@ class Journey < ActiveRecord::Base
   include Shaman
 
   belongs_to :user
-  has_one :itenerary
+  has_one :itenerary, dependent: :destroy
 
   validates :name, :user_id, presence: true
   validates :user_id, uniqueness: { scope: :name }

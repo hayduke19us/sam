@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def dashboard
     @users = User.all
-    unless current_user.journeys.empty?
+    unless current_user.interactions.empty?
       @hash = gmap
     end
     @map = "default_map"
