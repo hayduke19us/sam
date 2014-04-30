@@ -1,34 +1,62 @@
-<div class = "dark-banner">
 
+<div class = "dark-banner auto">
 <!-- #scaleable side bar --!>
   <div class = "small-2 medium-2 large-1" id="photo-wall" >
     <%= render partial: "photo_wall", locals: {photos: @photos, city: @city}%>
   </div>
 
-  <%= link_to "For Parents", "#", class: "button", id: "for-parents-link" %>
-  <%= link_to "Dashboard", users_dashboard_path, class: "button" %>
+  <%= link_to "Parents", "#", class: "button small nav-link", id: "for-parents-link" %>
+  <%= link_to "Dash", users_dashboard_path, class: "button small nav-link", 
+    id: "dashboard-link" %>
+  <%= link_to "Map", "#",
+    class: "button small nav-link", 
+    id: "map-link" %> 
+  <span class="hide" id="close-map-wrap">
+    <%= link_to "X", "#",
+      class: "button small nav-link", 
+      id: "close-map-link" %> 
+  </span>
+
+
+
+  <div id="map-wrapper">
+    <div id="opacity-wrapper">
+      <div id="map"></div>
+    </div>
+  </div>
 
   <div class="row">
-    <div class="small-7 medium-6 large-centered large-6 columns">
-      <h2 class="lobster white">Itenerary</h2>
-      <div class='dash-knob white center-text'>
-        <%= current_user.city %>
-      </div>
-      <div class="center-text"id="miles-circle">
-        <span id="miles"><%= @base %> m.</span>
-      </div>
-      <% @destinations.each do |city|%>
-        <%= link_to  raw("<div class='dash-knob white center-text'>#{city}</div>"),
-          itenerarys_choose_city_path(city: city, id: @itenerary.id),
-          remote: true %>
-        <% unless city == @destinations.last%>
-          <div class="center-text" id= "miles-circle">
-            <span id="miles"><%= @distance[city]%> m.</span>
+    <div class="small-8 medium-6 large-centered large-6 columns">
+      <div id="content-wrapper">
+        <h2 class="lobster white">Itenerary</h2>
+        <div class="show" id="trip-details">
+          <h6 class="white">Total Distance: <%= @total_distance%> m.</h6>
+          <h6 class="white">Destinations: <%= @destinations.count%></h6>
+          <%= link_to "Start Journey", "#", 
+            class: "button small success", id: "go"%>
+          <%= link_to "Cancel", "#", class: "small button alert", id: "go"%>
+        </div>
+        <div class="show" id="city-list">
+          <div class='dash-knob white center-text'>
+            <%= current_user.city %>
           </div>
-        <% end %>
-      <% end %>
+          <div class="center-text"id="miles-circle">
+            <span id="miles"><%= @base %> m.</span>
+          </div>
+          <% @destinations.each do |city|%>
+          <%= link_to  raw("<div class='dash-knob white center-text'>
+                    #{city}</div>"),
+              itenerarys_choose_city_path(city: city, id: @itenerary.id),
+              remote: true %>
+            <% unless city == @destinations.last%>
+              <div class="center-text" id= "miles-circle">
+                <span id="miles"><%= @distance[city]%> m.</span>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
-   </div>
   </div>
 
   <!-- modal for images --!>
@@ -62,14 +90,7 @@
     </div>
   </div>
 </div>
-<div id="trip" class="white-banner neg-bt-margin">
-  <div id="trip-details" class="center-text">
-    <div id="circle-content">
-      <h2 id="trip-details-title" class="lobster">Trip Details<h2>
-      <h4 >Total Distance: <%= @total_distance%> m.</h4>
-      <h4 >Destinations: <%= @destinations.count%></h4>
-      <%= link_to "Start Journey", "#", class: "button success", id: "go"%>
-    </div>
-  </div>
-</div>
+<script>
+  <%= render partial: "/users/default_map", locals: {hash: @hash}%>
+</script>
 

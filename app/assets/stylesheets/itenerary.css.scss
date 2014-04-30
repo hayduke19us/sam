@@ -2,9 +2,7 @@
 
 .city-img-th {margin-top:4px;
 }
-
-.white-banner {height: auto;
-}
+.auto {height: auto;}
 
 /* Photo wall side bar*/
 
@@ -15,22 +13,6 @@
              padding: 10px;
              z-index: 2000
 }
-
-#trip-details {height: 600px;
-               width: 600px;
-               position: absolute;
-               margin-left: 33%;
-               background-color: white;
-               border-radius: 50%;
-               margin-top: -300px;
-
-  #circle-content {padding-top: 1%;
-  }
-}
-
-
-
-
 
 #destination-wrapper {padding: 30px;}
 
@@ -55,6 +37,7 @@
              padding: 10px;
              z-index: 2000
 }
+
 
 #outer-wrapper {height: 400px;
                 width: 100%;
@@ -95,3 +78,27 @@
 }
 
 #city-title {margin-right: 20%;}
+
+#itenerary-map {height: 400px;
+                width: 100%;
+}
+
+.nav-link {position: relative;
+           z-index: 2000;
+}
+#for-parents-link {position: relative;
+                   z-index: 2000;
+}
+
+#content-wrapper {position: relative;
+                  z-index: 2000;
+}
+
+#opacity-wrapper {width: inherit;
+                  height: inherit;
+                  -webkit-filter: grayscale(0.6);
+}
+
+#city-list {height: 400px;
+           overflow: auto;
+}
