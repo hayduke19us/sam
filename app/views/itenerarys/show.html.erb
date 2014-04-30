@@ -17,10 +17,11 @@
       id: "close-map-link" %> 
   </span>
 
-
+ <div id="blur-wrapper">
+ </div>
 
   <div id="map-wrapper">
-    <div id="opacity-wrapper">
+    <div id="grayscale-wrapper">
       <div id="map"></div>
     </div>
   </div>
@@ -91,6 +92,6 @@
   </div>
 </div>
 <script>
-  <%= render partial: "/users/default_map", locals: {hash: @hash}%>
+  <%= render partial: "/users/itenerary_map", locals: {hash: @hash}%>
 </script>
 

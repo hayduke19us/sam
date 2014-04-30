@@ -7,6 +7,8 @@ $( document ).on("click", "#city-image", ->
   $("#content-wrapper").fadeOut()
   $("#for-parents-link").fadeOut()
   $("#dashboard-link").fadeOut()
+  $("#map-link").fadeOut()
+  $("#blur-wrapper").fadeOut();
   false
 )
 
@@ -15,7 +17,8 @@ $( document ).on("click", "#close-image-modal", ->
   $("#content-wrapper").fadeIn()
   $("#for-parents-link").fadeIn()
   $("#dashboard-link").fadeIn()
-
+  $("#map-link").fadeIn()
+  $("#blur-wrapper").fadeIn();
   false
 )
 
@@ -24,22 +27,27 @@ $( document ).on("click", ".city-list", ->
 )
 
 $( document ).on("click", "#map-link", ->
-  $("#content-wrapper").fadeOut()
+  complete = ->
+    $("#close-map-wrap").fadeIn()
+  $(this).fadeOut()
   $("#for-parents-link").fadeOut()
   $("#dashboard-link").fadeOut()
   $("#photo-wall").fadeOut()
-  $(this).fadeOut()
-  $("#close-map-wrap").fadeIn()
+  $("#content-wrapper").fadeOut( complete )
+  $("#grayscale-wrapper").css("opacity", 1.0)
+  $("#blur-wrapper").fadeOut()
   false
 )
 
 $( document ).on("click", "#close-map-link", ->
-  $("#content-wrapper").fadeIn()
-  $("#for-parents-link").fadeIn()
-  $("#dashboard-link").fadeIn()
-  $("#photo-wall").fadeIn()
-  $("#close-map-wrap").fadeOut()
-  $("#map-link").fadeIn()
+  complete = ->
+    $("#for-parents-link").fadeIn()
+    $("#dashboard-link").fadeIn()
+    $("#map-link").fadeIn()
+    $("#photo-wall").fadeIn()
+    $("#content-wrapper").fadeIn()
+    $("#blur-wrapper").fadeIn()
+  $("#close-map-wrap").fadeOut( complete )
   false
 )
 
