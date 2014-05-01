@@ -68,8 +68,11 @@
     <div id="profile-wrapper">
       <div id= "title-info-box" class="center-text right">
         <h2 id="city-title" class="lobster"></h2>
-        <h3><%= link_to "Info", "#", 
-             class: "center-text", id: "info-link"%></h3>
+        <h4><%= link_to "Info", "#", 
+             class: "center-text", id: "info-link"%>
+             |
+             <%= link_to image_tag("http://i.imgur.com/0D9TeuG.png?1"), "#", 
+             class: "center-text", id: "weather-link"%></h4>
       </div>
       <div id="img-modal-nav">
         <%= link_to "X", "#", class: "button tiny", 

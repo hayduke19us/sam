@@ -118,3 +118,5 @@ $dark-grey: darken(#efefef, 30);
 #city-list {height: 400px;
             overflow: auto;
 }
+
+#weather-link:hover {-webkit-filter: brightness(0.6);}
