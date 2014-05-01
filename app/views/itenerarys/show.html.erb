@@ -66,7 +66,11 @@
   <div class="hide" id="image-modal">
     <div id="modal-back-img"></div>
     <div id="profile-wrapper">
-      <li><h1 id="city-title" class="lobster right"></h1></li>
+      <div id= "title-info-box" class="center-text right">
+        <h2 id="city-title" class="lobster"></h2>
+        <h3><%= link_to "Info", "#", 
+             class: "center-text", id: "info-link"%></h3>
+      </div>
       <div id="img-modal-nav">
         <%= link_to "X", "#", class: "button tiny", 
            id: "close-image-modal" %>
@@ -89,8 +93,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="small-11 medium-centered medium-6 large-7 columns">
-            <h5 class="grey" id="wiki"><%= @city_info %></h5>
+          <div class="small-11 medium-centered medium-6 large-10 columns">
+            <h5 class="grey hide" id="wiki"><%= @city_info %></h5>
           </div>
         </div>
       </div>

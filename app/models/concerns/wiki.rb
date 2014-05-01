@@ -11,7 +11,7 @@ module Wiki
 
     attr_reader :uri, :city
 
-    def initialize city, sentences=3
+    def initialize city, sentences=5
       @sentences = sentences
       @city = city.gsub(" ", "%20")
       @endpoint = "http://en.wikipedia.org/w/api.php?"

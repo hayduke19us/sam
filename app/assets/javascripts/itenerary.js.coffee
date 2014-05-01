@@ -8,7 +8,6 @@ $( document ).on("click", "#city-image", ->
   $("#for-parents-link").fadeOut()
   $("#dashboard-link").fadeOut()
   $("#map-link").fadeOut()
-  $("#blur-wrapper").fadeOut();
   false
 )
 
@@ -18,12 +17,7 @@ $( document ).on("click", "#close-image-modal", ->
   $("#for-parents-link").fadeIn()
   $("#dashboard-link").fadeIn()
   $("#map-link").fadeIn()
-  $("#blur-wrapper").fadeIn();
   false
-)
-
-$( document ).on("click", ".city-list", ->
-  $("#city-title").html(this.id)
 )
 
 $( document ).on("click", "#map-link", ->
@@ -48,6 +42,11 @@ $( document ).on("click", "#close-map-link", ->
     $("#content-wrapper").fadeIn()
     $("#blur-wrapper").fadeIn()
   $("#close-map-wrap").fadeOut( complete )
+  false
+)
+
+$( document ).on("click", "#info-link", ->
+  $("#wiki").toggle("fade")
   false
 )
 

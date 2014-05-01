@@ -85,10 +85,10 @@ $dark-grey: darken(#efefef, 30);
               overflow-y: scroll;
 }
 
-#city-title {margin-right: 20%;}
-
 #wiki {margin-top: 20px;
 }
+
+#title-info-box {padding-right: 15%;}
 
 #for-parents-link {position: relative;
                    z-index: 2000;
@@ -109,12 +109,12 @@ $dark-grey: darken(#efefef, 30);
                -webkit-filter: brightness(0.2);
                position: absolute;
                opacity: 0.7;
-               z-index: 1200;
+               z-index: 900;
                left: 0;
                top: 0;
 }
 
 
 #city-list {height: 400px;
-           overflow: auto;
+            overflow: auto;
 }
