@@ -4,13 +4,11 @@
 
 @import 'global';
 
-.dark-banner-auto {background-color: $background-blue;
-                   height: auto;
-}
+li {list-style: none;}
+
+/*global class'*/
 
 .auto {height: auto;}
-
-li {list-style: none;}
 
 .inline {display: inline;}
 
@@ -26,19 +24,10 @@ li {list-style: none;}
 
 .light-pad {margin-top: 3px;}
 
-.extended-banner {height: 100%;
-                  background-color: $background-blue;
 
+.front {position: relative;
+        z-index: 1200;
 }
-
-#nav {position: relative;
-      z-index: 2;
-      width: 200px;
-      top: 0;
-
-}
-
-#close-dash-wrap {padding: 20px;}
 
 .dash-knob { width: 100%;
              padding: 20px;
@@ -62,6 +51,9 @@ li {list-style: none;}
 .on-top { position: relative;
           z-index: 2;
 }
+
+#close-dash-wrap {padding: 20px;}
+
 
 #modal-back {height: 100%;
              width: 100%;
@@ -158,3 +150,4 @@ li {list-style: none;}
 #interaction-count { padding-left: 10px;
                      float: right;
 }
+

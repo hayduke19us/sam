@@ -4,8 +4,8 @@
   <div class = "small-2 medium-2 large-1" id="photo-wall" >
     <%= render partial: "photo_wall", locals: {photos: @photos, city: @city}%>
   </div>
-
-  <%= link_to "Parents", "#", class: "button small nav-link", id: "for-parents-link" %>
+  <%= link_to "Parents", "#", 
+    class: "button small nav-link", id: "for-parents-link" %>
   <%= link_to "Dash", users_dashboard_path, class: "button small nav-link", 
     id: "dashboard-link" %>
   <%= link_to "Map", "#",

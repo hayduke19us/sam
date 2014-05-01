@@ -1,18 +1,18 @@
 <div class="dark-banner">
-  <%= link_to "Parents", "#", class: "button"%>
-  <%= link_to "Dashboard", users_dashboard_path, class: "button"%>
-  <div class="row">
-    <div class="large-12 center-text">
-      <h1 class="lobster white">History</h1>
-    </div>
-    <div class="large-12 center-text">
-      <%= form_tag users_search_journey_path, remote: true, method: :get  do %>
-        <%= text_field_tag :search, nil, :placeholder => "search by name"%>
-        <%= submit_tag "Search", class: "button"%>
-      <% end %>
-    </div>
-  </div>
   <div class="dark-banner auto">
+    <%= link_to "Parents", "#", class: "button small"%>
+    <%= link_to "Dashboard", users_dashboard_path, class: "button small"%>
+    <div class="row">
+      <div class="large-12 center-text">
+        <h1 class="lobster white">History</h1>
+      </div>
+      <div class="large-12 center-text">
+        <%= form_tag users_search_journey_path, remote: true, method: :get  do %>
+          <%= text_field_tag :search, nil, :placeholder => "search by name"%>
+          <%= submit_tag "Search", class: "button"%>
+        <% end %>
+      </div>
+    </div>
     <div class="row">
       <div class="small-12 medium-12 large-12">
         <div id = "journey-search-results">
