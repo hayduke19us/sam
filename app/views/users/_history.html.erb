@@ -1,0 +1,7 @@
+<% journeys.each do |j| %>
+  <%= link_to raw("<div class='dash-knob'>
+    <span class='white'>#{j.name.titleize}</span>
+    <span id='interaction-count'>Interactions
+    #{j.interactions.count}</span></div>"), 
+    itenerary_path(j.itenerary) %>
+<% end %>

@@ -27,4 +27,8 @@ class Journey < ActiveRecord::Base
     self.itenerary.interactions
   end
 
+  def self.search query, id
+    ::Journey.where("name LIKE ? AND user_id = ?", "%#{query}%", "#{id}")
+  end
+
 end

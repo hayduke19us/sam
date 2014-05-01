@@ -1,0 +1,3 @@
+$("#journey-search-results").html("");
+$("#journey-search-results").html("<%= j render partial: "history",
+                                  locals: {journeys: @journeys}%>");

@@ -13,12 +13,23 @@ class UsersController < ApplicationController
   end
 
   def history
-    @journeys = current_user.journeys
+    unless params[:search]
+      @journeys = current_user.journeys
+    else
+      @journeys = Journey.search(params[:search])
+    end
   end
 
   def map_choice
     @options_hash = {map_choice: params[:map_choice], hash: gmap}
     respond_with @options_hash
+  end
+
+  def search_journey
+    if params[:search]
+      @journeys = Journey.search(params[:search], current_user.id)
+    end
+      respond_with @journeys
   end
 
 private
@@ -31,7 +42,6 @@ private
       redirect_to new_guardian_session_path
     end
   end
-
 
   def gmap
     unless current_user.journeys.empty?

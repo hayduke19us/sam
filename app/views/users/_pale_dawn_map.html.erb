@@ -13,6 +13,15 @@ handler.buildMap({
   }
 }, 
   function(){
+    marker = handler.addMarker({
+       lat: <%= current_user.lat %>,
+       lng: <%= current_user.long %>,
+       picture: {
+         url: "http://i.imgur.com/vebhdRE.png?1",
+         width: 60,
+         height: 60
+       },
+     })
      markers = handler.addMarkers(<%=raw hash.to_json %>)
      handler.bounds.extendWith(markers);
   }

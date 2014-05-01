@@ -12,7 +12,7 @@ $ ->
       $(modal).fadeIn()
       $(option).fadeIn() if option
       $(option2).fadeOut() if option2
-      $(option3).fadeOut() if optioni3
+      $(option3).fadeOut() if option3
       false
     )
 
@@ -22,9 +22,6 @@ $ ->
   openModal "#side-bar-link","#journey-modal", "#modal-back", "#map-wrapper",
             "#side-bar"
   closeModal "#close-modal", "#journey-modal", "#modal-back", "#map-wrapper"
-
-
-  
 
   showDiv = (link, div1, div2) ->
     $( document ).on("click", link, ->

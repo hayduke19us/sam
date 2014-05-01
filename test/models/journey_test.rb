@@ -53,6 +53,11 @@ class JourneyTest < ActiveSupport::TestCase
     assert_equal 1, @franny_journey.interactions.count
   end
 
+  test "should return a collection of journeys by query" do
+    franny = users(:franny)
+    assert_equal 1, Journey.search("franny", franny.id).count
+  end
+
   def create_a_journey distance
     franny = users(:franny) 
     Journey.new name: "first_trip", distance: distance, user: franny

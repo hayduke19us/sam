@@ -12,6 +12,7 @@ Sam::Application.routes.draw do
 
   get "users/dashboard"
   get "users/history"
+  get "users/search_journey"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

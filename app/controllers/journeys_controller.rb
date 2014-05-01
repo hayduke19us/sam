@@ -1,4 +1,7 @@
 class JourneysController < ApplicationController
+
+  respond_to :js, :html
+
   def create
     journey = Journey.new(name: params[:name], 
                              distance: params[:distance],

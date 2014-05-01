@@ -1,4 +1,3 @@
-
 <div class="dark-banner">
   <%= link_to "Parents", "#", class: "button"%>
   <%= link_to "Dashboard", users_dashboard_path, class: "button"%>
@@ -7,24 +6,18 @@
       <h1 class="lobster white">History</h1>
     </div>
     <div class="large-12 center-text">
-      <%= form_tag users_dashboard_path do %>
+      <%= form_tag users_search_journey_path, remote: true, method: :get  do %>
         <%= text_field_tag :search, nil, :placeholder => "search by name"%>
         <%= submit_tag "Search", class: "button"%>
       <% end %>
     </div>
   </div>
-  <div class="dark-banner-auto">
+  <div class="dark-banner auto">
     <div class="row">
       <div class="small-12 medium-12 large-12">
-        <% @journeys.each do |j| %>
-          <a href="">
-          <div class="dash-knob">
-            <span class="white"><%= j.name.titleize %></span>
-            <span id="interaction-count">Interactions
-              <%= j.interactions.count %></span>
-          </div>
-          </a>
-        <% end %>
+        <div id = "journey-search-results">
+          <%= render partial: "history", locals: {journeys: @journeys}%>
+        </div>
       </div>
     </div>
   </div>
