@@ -1,6 +1,8 @@
+
 class Itenerary < ActiveRecord::Base
 
   include Photo
+  include Wiki
 
   belongs_to :journey
   has_many :interactions
@@ -36,6 +38,10 @@ class Itenerary < ActiveRecord::Base
 
   def interaction_photos
     photos self.cities
+  end
+
+  def city_info city
+    Wiki::Wiki.new(city.to_s).summary
   end
 
 end

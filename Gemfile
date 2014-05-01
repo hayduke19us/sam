@@ -7,6 +7,8 @@ gem "gmaps4rails"
 gem 'coveralls', require: false
 gem 'figaro'
 gem 'redis'
+gem 'wikipedia-client'
+gem 'symboltable'
 
 group :development do
   gem "better_errors"

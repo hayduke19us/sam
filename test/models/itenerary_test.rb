@@ -67,5 +67,14 @@ class IteneraryTest < ActiveSupport::TestCase
     assert_equal 1, @itenerary.interaction_photos.count
   end
 
+  test "Wiki module should return a plain text summart of city" do
+    wiki = Wiki::Wiki.new("seattle")
+    assert_equal String, wiki.summary.class
+  end
+
+  test "city_info method returns string of info about city given" do
+    assert_equal String, Wiki::Wiki.new("austin").summary.class
+  end
+
 
 end

@@ -41,7 +41,7 @@
         </div>
         <div class="show" id="city-list">
           <div class='dash-knob white center-text'>
-            <%= current_user.city %>
+            <%= current_user.city %><%= image_tag "http://imgur.com/vebhdRE.png?1"%>
           </div>
           <div class="center-text"id="miles-circle">
             <span id="miles"><%= @base %> m.</span>
@@ -87,6 +87,12 @@
           <div class="small-10 medium-centered 
                medium-6 large-centered large-6 columns">
             <img class = "hide" id = "full-image" src = "" >
+          </div>
+          <div class="small-10 medium-centered medium-6
+            large-centered large-6 columns">
+            <div id="city-info">
+              <%= @city_info[@city]%>
+            </div>
           </div>
         </div>
       </div>
