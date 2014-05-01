@@ -1,5 +1,13 @@
 @import 'global';
 
+$dark-grey: darken(#efefef, 30);
+
+.grey {color: $dark-grey;}
+
+.nav-link {position: relative;
+           z-index: 2000;
+}
+
 .city-img-th {margin-top:4px;
 }
 .auto {height: auto;}
@@ -79,9 +87,9 @@
 
 #city-title {margin-right: 20%;}
 
-.nav-link {position: relative;
-           z-index: 2000;
+#city-info {margin-top: 20px;
 }
+
 #for-parents-link {position: relative;
                    z-index: 2000;
 }

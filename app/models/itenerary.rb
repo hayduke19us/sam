@@ -41,7 +41,7 @@ class Itenerary < ActiveRecord::Base
   end
 
   def city_info city
-    Wiki::Wiki.new(city.to_s).summary
+    Wiki::Willy.new(city.to_s).summary
   end
 
 end

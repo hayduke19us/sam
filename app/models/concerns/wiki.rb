@@ -7,7 +7,7 @@ module Wiki
 
   extend ActiveSupport::Concern
   
-  class Wiki
+  class Willy
 
     attr_reader :uri
 
