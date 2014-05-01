@@ -11,11 +11,12 @@ module Wiki
 
     attr_reader :uri
 
-    def initialize city
+    def initialize city, sentences=3
+      @sentences = sentences
       @city = city.gsub(" ", "%20")
       @endpoint = "http://en.wikipedia.org/w/api.php?"
       @main = "format=json&action=query&titles=#{@city}&"
-      @properties = "prop=extracts&exsentences=10&"
+      @properties = "prop=extracts&exsentences=#{@sentences}&"
       @output = "exsectionformat=plain&explaintext=true&redirects=true"
       @uri = URI("#{@endpoint}#{@main}#{@properties}#{@output}")
     end
