@@ -9,7 +9,7 @@ module Wiki
   
   class Willy
 
-    attr_reader :uri
+    attr_reader :uri, :city
 
     def initialize city, sentences=3
       @sentences = sentences
@@ -44,7 +44,14 @@ module Wiki
     end
 
     def summary 
-      search[key].extract
+      city_info = "#{self.city}_info"
+      unless $redis[city_info]
+        info = search[key].extract
+        $redis.set(city_info, info)
+        info
+      else
+        $redis[city_info]
+      end
     end
   end
 end

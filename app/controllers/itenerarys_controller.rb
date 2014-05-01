@@ -31,9 +31,11 @@ class ItenerarysController < ApplicationController
   def choose_city
     @itenerary = Itenerary.find(params[:id])
     @photos = @itenerary.interaction_photos 
-    city_info = @itenerary.city_info(params[:city])
+    city = params[:city]
+    city_info = @itenerary.city_info(city)
     @respond = {photos: @photos, 
-                city: params[:city],
+                full_image: @photos[city].first,
+                city: city,
                 city_info: city_info}
     respond_with @respond
   end

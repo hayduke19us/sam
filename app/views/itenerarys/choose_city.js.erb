@@ -1,5 +1,6 @@
 $("#photo-wall").html("");
 $("#photo-wall").html("<%= j render partial: "photo_wall",
                       locals: {photos: @respond[:photos], city: @respond[:city]}%>");
-$("#city-info").html("")
-$("#city-info").html("<%= j @respond[:city_info] %>")
+$("#wiki").html("");
+$("#wiki").html("<%= j @respond[:city_info] %>");
+$("#full-image").attr("src", "<%= j @respond[:full_image] %>");

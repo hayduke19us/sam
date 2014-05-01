@@ -68,12 +68,12 @@ class IteneraryTest < ActiveSupport::TestCase
   end
 
   test "Wiki module should return a plain text summart of city" do
-    wiki = Wiki::Wiki.new("seattle")
+    wiki = Wiki::Willy.new("seattle")
     assert_equal String, wiki.summary.class
   end
 
   test "city_info method returns string of info about city given" do
-    assert_equal String, Wiki::Wiki.new("austin").summary.class
+    assert_equal String, Wiki::Willy.new("austin").summary.class
   end
 
 
