@@ -8,6 +8,8 @@ li {list-style: none;}
 
 /*global class'*/
 
+.absolute {position: absolute;}
+
 .auto {height: auto;}
 
 .inline {display: inline;}
@@ -26,7 +28,7 @@ li {list-style: none;}
 
 
 .front {position: relative;
-        z-index: 1200;
+        z-index: 500;
 }
 
 .dash-knob { width: 100%;

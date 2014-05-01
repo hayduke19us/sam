@@ -35,7 +35,7 @@ $ ->
   showDiv "#back-dashboard", "#map-controls", "#dash-controls"
 
   $( document ).on("click", "#dashboard", ->
-     $("#side-bar").toggle() 
+     $("#side-bar").toggle( "fade")
      false
    )
 

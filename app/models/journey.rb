@@ -5,7 +5,7 @@ class Journey < ActiveRecord::Base
   belongs_to :user
   has_one :itenerary, dependent: :destroy
 
-  validates :name, :user_id, presence: true
+  validates :name, :user_id, :distance,  presence: true
   validates :user_id, uniqueness: { scope: :name }
 
   after_save :begin_journey
