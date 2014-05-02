@@ -1,0 +1,45 @@
+<div class="dark-banner">
+  <%= link_to "Parents", "#", 
+    class: "button small nav-link", id: "for-parents-link" %>
+  <%= link_to "Dash", users_dashboard_path, class: "button small nav-link", 
+    id: "dashboard-link" %>
+
+  <div class = "row">
+    <div class = "small-12 medium-12 large-centered large-5 columns">
+      <h1 class="center-text white lobster">
+        <%= @interactions.first.user.city %></h1>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "small-12 medium-centered 
+      medium-6 large-centered large-5 columns">
+      <div id="comparison-wrapper">
+        <div class = "user-circle center-text" id="current-user-circle">
+          <span class="user-avatar-pad">
+            <%= image_tag "http://i.imgur.com/vebhdRE.png?1"%>
+          </span>
+        </div>
+        <div id = "differences">
+          <h6 class="sm-circle back1"></h6>
+          <h6 class="sm-circle back2"></h6>
+          <h6 class="sm-circle back3"></h6>
+          <h6 class="sm-circle back4"></h6>
+        </div>
+        <div class = "user-circle center-text" id="user-circle">
+          <span class="user-avatar-pad">
+            <%= image_tag "http://i.imgur.com/vebhdRE.png?1"%>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-6 large-centered large-6 columns">
+      <%= form_tag do %>
+        <%= text_area_tag :message, nil, id: "message-field"%>
+        <%= submit_tag "Send", class: "button expand" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
