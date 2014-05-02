@@ -84,5 +84,4 @@ class IteneraryTest < ActiveSupport::TestCase
     assert_equal String, @itenerary.route.class
   end
 
-
 end

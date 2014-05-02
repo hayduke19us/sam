@@ -23,13 +23,19 @@ class JourneyTest < ActiveSupport::TestCase
 
   test "a user's journeys must have a unique name"  do
     franny = users(:franny)
-    journey = Journey.new(name: "franny_journey", user: franny)
+    journey = Journey.new(name: "franny_journey", user: franny, distance: "short")
+    refute journey.valid?
+  end
+
+  test "a journey must have a distance i.e. short or long" do
+    franny = users(:franny)
+    journey = Journey.new(name: "franny_journey", user: franny, distance: nil)
     refute journey.valid?
   end
 
   test "two different users can have journeys with the same name" do
     zoey = users(:zoey)
-    journey = Journey.new(name: "franny_journey", user: zoey)
+    journey = Journey.new(name: "franny_journey", user: zoey, distance: "short")
     assert journey.valid?
   end
 
