@@ -1,9 +1,17 @@
 Sam::Application.routes.draw do
+
+  get "welcome/index"
   get "interactions/symposium"
   get "itenerarys/choose_city"  
   get "users/map_choice"
   get "users/parent"
-  get "welcome/index"
+
+  get "guardians/recent"
+  get "guardians/blocked"
+  get "guardians/friends"
+  get "guardians/questions"
+  get "guardians/answers"
+
 
   devise_for :users
   devise_for :guardians, controllers: { registrations: "guardians/registrations" }

@@ -1,0 +1,11 @@
+<div class = "right white lobster" id="interaction-count">
+  <%= interactions.count%>
+</div>
+<h5 class="white lobster">Below is a log of your kiddos interaction</h4>
+<% interactions.each do |inter|%>
+  <div class="dash-knob white">
+    <%= image_tag "http://i.imgur.com/vebhdRE.png?1"%><%= inter.user.email%>
+    | <span><%= inter.user.city%></span>
+  </div>
+<% end %>
+

@@ -8,26 +8,17 @@
         <h1 class="white lobster">For Parents</h1>
       </div>
       <div class="large-8 columns">
-        <%= link_to "Recent", "#", class: "button tiny"%>
-        <%= link_to "Blocked", "#", class: "button tiny"%>
-        <%= link_to "Friends", "#", class: "button tiny"%>
-        <%= link_to "Questions", "#", class: "button tiny"%>
-        <%= link_to "Answers", "#", class: "button tiny"%>
+        <%= link_to "Recent", guardians_recent_path, class: "button tiny"%>
+        <%= link_to "Blocked", guardians_blocked_path, class: "button tiny"%>
+        <%= link_to "Friends", guardians_friends_path, class: "button tiny"%>
+        <%= link_to "Questions", guardians_questions_path, class: "button tiny"%>
+        <%= link_to "Answers", guardians_answers_path, class: "button tiny"%>
       </div>
     </div>
     <div class = "row">
       <div class = "large-12 columns">
-        <div class = "right white lobster" id="interaction-count">
-          <%= current_user.interactions.count%>
-        </div>
-        <h5 class="white lobster">Below is a log of your kiddos interaction</h4>
-        <% current_user.interactions.each do |inter|%>
-          <div class="dash-knob white">
-            <%= image_tag "http://i.imgur.com/vebhdRE.png?1"%><%= inter.user.email%>
-            | <span><%= inter.user.city%></span>
-            | <span><%= inter.created_at%></span>
-          </div>
-        <% end %>
+        <%= render partial: "guardians/log", 
+          locals: {interactions: current_user.interactions}%>
       </div>
     </div>
   </div>
