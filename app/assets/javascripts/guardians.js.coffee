@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+
+$(document).on("click", "#recent", ->
+  $("#nav").toggle("fade")
+  $("#recent-nav").toggle("fade")
+)
+
+$(document).on("click", "#recent-nav a", ->
+  $(".active").attr("class", "button tiny")
+  $(this).attr("class", "button small active")
+)

@@ -8,17 +8,36 @@
         <h1 class="white lobster">For Parents</h1>
       </div>
       <div class="large-8 columns">
-        <%= link_to "Recent", guardians_recent_path, class: "button tiny"%>
-        <%= link_to "Blocked", guardians_blocked_path, class: "button tiny"%>
-        <%= link_to "Friends", guardians_friends_path, class: "button tiny"%>
-        <%= link_to "Questions", guardians_questions_path, class: "button tiny"%>
-        <%= link_to "Answers", guardians_answers_path, class: "button tiny"%>
+        <div class="hide" id="recent-nav">
+          <%= link_to "day", guardians_recent_path(time: "day"), 
+            remote: true,
+            class: "button tiny", id: "time"%>
+          <%= link_to "week", guardians_recent_path(time: "week"), 
+            remote: true,
+            class: "button small active", id: "time"%>
+          <%= link_to "month", guardians_recent_path(time: "month"), 
+            remote: true,
+            class: "button tiny", id: "time"%>
+          <%= link_to "back", guardians_for_parents_path, class: "button tiny"%>
+        </div>
+        <div id="nav">
+          <%= link_to "Recent", 
+            guardians_recent_path(time: "day"), 
+            remote: true, 
+            class: "button tiny", id: "recent"%>
+          <%= link_to "Blocked", guardians_blocked_path, class: "button tiny"%>
+          <%= link_to "Friends", guardians_friends_path, class: "button tiny"%>
+          <%= link_to "Questions", guardians_questions_path, class: "button tiny"%>
+          <%= link_to "Answers", guardians_answers_path, class: "button tiny"%>
+        </div>
       </div>
     </div>
     <div class = "row">
       <div class = "large-12 columns">
-        <%= render partial: "guardians/log", 
-          locals: {interactions: current_user.interactions}%>
+        <div id = "log-partial">
+          <%= render partial: "log", 
+            locals: {interactions: @interactions}%>
+        </div>
       </div>
     </div>
   </div>

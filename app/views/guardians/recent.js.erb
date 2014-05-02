@@ -1,0 +1,3 @@
+$("#log-partial").html("");
+$("#log-partial").html("<%= j render partial: 'log',
+                       locals: {interactions: @recent_interactions}%>");
