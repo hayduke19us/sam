@@ -47,7 +47,11 @@ handler.buildMap({
          height: 60
        },
      })
-     markers = handler.addMarkers(<%=raw hash.to_json %>)
+
+     route = handler.addPolylines(
+       <%= raw route %>,
+       {strokeColor: '#efefef'});
+     markers = handler.addMarkers(<%=raw hash.to_json %>);
      handler.bounds.extendWith(markers);
   }
 );

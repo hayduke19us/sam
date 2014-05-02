@@ -77,7 +77,11 @@ class IteneraryTest < ActiveSupport::TestCase
   end
 
   test "city temp returns a hash of city's temp and overview" do
-    assert_equal 1, @itenerary.city_weather("seattle")
+    assert_equal Hash, @itenerary.city_weather("seattle").class
+  end
+
+  test "route returns a complex json array of long and lat of users" do
+    assert_equal String, @itenerary.route.class
   end
 
 

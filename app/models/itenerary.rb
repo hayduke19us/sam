@@ -50,4 +50,12 @@ class Itenerary < ActiveRecord::Base
     {temp: weather.temp, overview: weather.overview}
   end
 
+  def route
+    array = [{lat: self.user.lat, lng: self.user.long}]
+    Interaction.users(self.interactions).each do |user|
+      array << {lat: user.lat, lng: user.long}
+    end
+    [array].to_json
+  end
+
 end

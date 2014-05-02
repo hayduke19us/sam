@@ -6,21 +6,21 @@ class ItenerarysController < ApplicationController
     user = current_user
     @itenerary = Itenerary.find(params[:id])
     @journey = @itenerary.journey
-    interactions = @itenerary.interactions
-    @hash = gmap interactions
+    @interactions = @itenerary.interactions
 
     array = []
-    interactions.each do |inter|
+    @interactions.each do |inter|
       array << inter.user
     end
-
     @destinations = array.map {|user| user.city }
+
     @city = @destinations.first
     @city_info = @itenerary.city_info(@city)
     @weather = @itenerary.city_weather(@city)
 
     #a hash for the Gmap markers
-    @hash = gmap interactions
+    @hash = gmap @interactions
+    @route = @itenerary.route
     @map = "default_map"
 
     @photos = @itenerary.interaction_photos
