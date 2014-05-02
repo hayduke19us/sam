@@ -1,13 +1,23 @@
 <div class="dark-banner-auto">
   <div class="dark-banner">
+  <%= link_to "Dash", users_dashboard_path, class: "button small nav-link", 
+    id: "dashboard-link" %>
+
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-4 columns">
         <h1 class="white lobster">For Parents</h1>
+      </div>
+      <div class="large-8 columns">
+        <%= link_to "Recent", "#", class: "button tiny"%>
+        <%= link_to "Blocked", "#", class: "button tiny"%>
+        <%= link_to "Friends", "#", class: "button tiny"%>
+        <%= link_to "Questions", "#", class: "button tiny"%>
+        <%= link_to "Answers", "#", class: "button tiny"%>
       </div>
     </div>
     <div class = "row">
       <div class = "large-12 columns">
-        <div class = "right" id="interaction-count">
+        <div class = "right white lobster" id="interaction-count">
           <%= current_user.interactions.count%>
         </div>
         <h5 class="white lobster">Below is a log of your kiddos interaction</h4>
