@@ -32,6 +32,10 @@ class UsersController < ApplicationController
       respond_with @journeys
   end
 
+  def parent
+
+  end
+
 private
 
   def authenticate_users_guardian
