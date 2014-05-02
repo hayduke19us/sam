@@ -8,7 +8,6 @@ $(document).on("click", "#recent", ->
 $(document).on("click", "#recent-nav a", ->
   $(".active").attr("class", "button tiny")
   $(this).attr("class", "button small active")
-  false
 )
 
 $(document).on("click", "#interaction-list a", ->

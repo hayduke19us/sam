@@ -18,17 +18,15 @@
           <%= link_to "month", guardians_recent_path(time: "month"), 
             remote: true,
             class: "button tiny", id: "time"%>
-          <%= link_to "back", guardians_for_parents_path, class: "button tiny"%>
+          <%= link_to "back", guardians_for_parents_path, 
+            class: "button tiny",
+            id: "back"%>
         </div>
         <div id="nav">
           <%= link_to "Recent", 
             guardians_recent_path(time: "day"), 
             remote: true, 
             class: "button tiny", id: "recent"%>
-          <%= link_to "Blocked", guardians_blocked_path, class: "button tiny"%>
-          <%= link_to "Friends", guardians_friends_path, class: "button tiny"%>
-          <%= link_to "Questions", guardians_questions_path, class: "button tiny"%>
-          <%= link_to "Answers", guardians_answers_path, class: "button tiny"%>
         </div>
       </div>
     </div>
