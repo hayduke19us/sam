@@ -4,8 +4,9 @@ Sam::Application.routes.draw do
   get "interactions/symposium"
   get "itenerarys/choose_city"  
   get "users/map_choice"
-  get "users/parent"
 
+
+  get "guardians/for_parents"
   get "guardians/recent"
   get "guardians/blocked"
   get "guardians/friends"

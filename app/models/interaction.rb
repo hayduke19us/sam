@@ -14,4 +14,24 @@ class Interaction < ActiveRecord::Base
     array
   end
 
+  def self.recent(interactions, time, amount=1)
+    array = []
+    interactions.each do |inter|
+      array << inter if inter.send("#{time}_past", amount)
+    end
+    array
+  end
+
+  def day_past amount=1
+    self.created_at >= amount.day.ago.to_s  
+  end
+
+  def week_past amount=1
+    self.created_at >= amount.week.ago.to_s  
+  end
+
+  def month_past amount=1
+    self.created_at >= amount.month.ago.to_s  
+  end
+
 end
