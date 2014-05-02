@@ -8,6 +8,8 @@
                    background-color: $background-blue;
 }
 
+.blue-title {color: darken($background-blue, 20);}
+
 li {list-style: none;}
 
 /*global class'*/
@@ -40,6 +42,14 @@ li {list-style: none;}
              margin-top: 5px;
              background-color: darken($background-blue, 30); 
              -webkit-transition: background-color 300ms ease-out;
+
+
+}
+
+.dash-knob-white { width: 100%;
+                   height: auto;
+                   padding: 20px;
+                   background-color: white; 
 
 
 }

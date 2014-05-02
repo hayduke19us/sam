@@ -34,4 +34,14 @@ class Interaction < ActiveRecord::Base
     self.created_at >= amount.month.ago.to_s  
   end
 
+  #the user's guardian from interaction
+  def guardian
+    self.user.guardian
+  end
+
+  def created_time
+    t =  self.created_at
+    t.to_formatted_s(:long_ordinal)
+  end
+
 end
