@@ -4,6 +4,8 @@ $("#photo-wall").html("<%= j render partial: "photo_wall",
 function complete(){
   $("#wiki").html("");
   $("#wiki").html("<%= j @respond[:city_info] %>");
+  $("#overview").html("<%= j @respond[:weather][:overview]%>")
+  $("#temp").html("<%= @respond[:weather][:temp] %>° Celsius")
   $("#full-image").attr("src", "<%= j @respond[:full_image] %>");
   $("#city-title").html("<%= j @respond[:city]%>")
   $("#profile-wrapper").fadeIn('slow')

@@ -46,7 +46,22 @@ $( document ).on("click", "#close-map-link", ->
 )
 
 $( document ).on("click", "#info-link", ->
-  $("#wiki").toggle("fade")
+  complete = ->
+    $("#wiki").toggle("fade")
+  if $("#weather-wrapper")
+    $("#weather-wrapper").fadeOut( complete )
+  else
+    $("#wiki").toggle("fade")
+  false
+)
+
+$( document ).on("click", "#weather-link", ->
+  complete = ->
+    $("#weather-wrapper").toggle("fade")
+  if $("#wiki")
+    $("#wiki").fadeOut( complete )
+  else
+    $("#weather-wrapper").toggle("fade")
   false
 )
 

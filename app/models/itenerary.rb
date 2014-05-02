@@ -3,6 +3,7 @@ class Itenerary < ActiveRecord::Base
 
   include Photo
   include Wiki
+  include Weather
 
   belongs_to :journey
   has_many :interactions
@@ -42,6 +43,11 @@ class Itenerary < ActiveRecord::Base
 
   def city_info city
     Wiki::Willy.new(city.to_s).summary
+  end
+
+  def city_weather city
+    weather = Weather::Forcast.new(city)
+    {temp: weather.temp, overview: weather.overview}
   end
 
 end

@@ -97,6 +97,14 @@
         </div>
         <div class="row">
           <div class="small-11 medium-centered medium-6 large-10 columns">
+            <div class="grey hide center-text" id = "weather-wrapper">
+              <h2 class="lobster" id="overview"><%="#{@weather[:overview]}"%></h2>
+              <h5 id="temp"><%="#{@weather[:temp]}° Celsius"%></h5>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-11 medium-centered medium-6 large-10 columns">
             <h5 class="grey hide" id="wiki"><%= @city_info %></h5>
           </div>
         </div>

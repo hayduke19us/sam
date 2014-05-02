@@ -17,6 +17,7 @@ class ItenerarysController < ApplicationController
     @destinations = array.map {|user| user.city }
     @city = @destinations.first
     @city_info = @itenerary.city_info(@city)
+    @weather = @itenerary.city_weather(@city)
 
     #a hash for the Gmap markers
     @hash = gmap interactions
@@ -33,9 +34,11 @@ class ItenerarysController < ApplicationController
     @photos = @itenerary.interaction_photos 
     city = params[:city]
     city_info = @itenerary.city_info(city)
+    weather = @itenerary.city_weather(city)
     @respond = {photos: @photos, 
                 full_image: @photos[city].first,
                 city: city,
+                weather: weather,
                 city_info: city_info}
     respond_with @respond
   end

@@ -76,5 +76,9 @@ class IteneraryTest < ActiveSupport::TestCase
     assert_equal String, Wiki::Willy.new("austin").summary.class
   end
 
+  test "city temp returns a hash of city's temp and overview" do
+    assert_equal 1, @itenerary.city_weather("seattle")
+  end
+
 
 end
