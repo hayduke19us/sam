@@ -1,0 +1,52 @@
+@import "global";
+
+.user-circle {position: absolute;
+              height: 200px;
+              width: 200px;
+              z-index: 1200;
+              border-radius: 50%;
+              background-color: transparent;
+              border: 1px solid lighten($background-blue, 10);
+              padding-top: 70px;
+}
+
+.dark-banner-half {height: 50%;
+                   background-color: $background-blue;
+}
+
+.darker-banner {height: 50%;
+                background-color: darken($background-blue, 50);
+}
+
+.sm-circle {height: 10px;
+            width: 10px;
+            border-radius: 50%;
+}
+.back1 {background-color: darken($background-blue, 20);}
+.back2 {background-color: darken($background-blue, 30);}
+.back3 {background-color: darken($background-blue, 40);}
+.back4 {background-color: darken($background-blue, 50);}
+
+#user-circle {margin-left: 150px;}
+
+#differences {position: absolute;
+              margin-left: 170px;
+              padding-top: 60px;
+}
+
+#comparison-wrapper {padding-top: 30px;
+                     height: 300px;
+                     width: 100%;
+}
+
+#message-field {height: 100px;
+                background-color: transparent;
+                border: none;
+                color: white;
+                font-size: 20px;
+                -webkit-box-shadow: none;
+}
+
+#message-form {margin-top: 50px; }
+
+

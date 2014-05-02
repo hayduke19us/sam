@@ -33,7 +33,8 @@
         <div class="show" id="trip-details">
           <h6 class="white">Total Distance: <%= @total_distance%> m.</h6>
           <h6 class="white">Destinations: <%= @destinations.count%></h6>
-          <%= link_to "Start Journey", "#", 
+          <%= link_to "Start Journey", 
+            interactions_symposium_path(id: @itenerary.id), 
             class: "button small success", id: "go"%>
           <%= link_to "Cancel", journey_path(@journey),
             method: :delete,
