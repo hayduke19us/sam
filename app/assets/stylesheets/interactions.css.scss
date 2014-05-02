@@ -10,6 +10,14 @@
               padding-top: 70px;
 }
 
+.dark-banner-half {height: 50%;
+                   background-color: $background-blue;
+}
+
+.darker-banner {height: 50%;
+                background-color: darken($background-blue, 50);
+}
+
 .sm-circle {height: 10px;
             width: 10px;
             border-radius: 50%;
@@ -39,6 +47,6 @@
                 -webkit-box-shadow: none;
 }
 
-
+#message-form {margin-top: 50px; }
 
 

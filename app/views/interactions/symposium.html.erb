@@ -1,4 +1,4 @@
-<div class="dark-banner">
+<div class="dark-banner-half">
   <%= link_to "Parents", "#", 
     class: "button small nav-link", id: "for-parents-link" %>
   <%= link_to "Dash", users_dashboard_path, class: "button small nav-link", 
@@ -33,13 +33,16 @@
       </div>
     </div>
   </div>
+</div>
+<div class="darker-banner">
   <div class="row">
     <div class="small-12 medium-6 large-centered large-6 columns">
-      <%= form_tag do %>
-        <%= text_area_tag :message, nil, id: "message-field"%>
-        <%= submit_tag "Send", class: "button expand" %>
-      <% end %>
+      <div id="message-form">
+        <%= form_tag do %>
+          <%= text_area_tag :message, nil, id: "message-field"%>
+          <%= submit_tag "Send", class: "button expand" %>
+        <% end %>
+      </div>
     </div>
   </div>
-
 </div>
